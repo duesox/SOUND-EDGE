@@ -23,51 +23,42 @@
 
 \title{Akustická prediktívna údržba priemyselných zariadení pomocou okrajového strojového učenia a IoT\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2026/2027, vedenie: Ing. Ivan Kapustík}}
 
-\author{Gabriela Tov, Pavel Ustimenko, Ján Vargovčík\\[2pt]
+\author{Gabriela Tovarňáková, Pavel Ustimenko, Ján Vargovčík\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{xpriezvisko@stuba.sk}}
 }
 
-\date{\small 30. september 2026}
+\date{\small 4. október 2026}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-Tento dokument predstavuje spresnenie zamerania semestrálneho projektu v rámci výzvy pre aplikovaný výskum. Projekt \textbf{SOUND-EDGE} sa zaoberá výskumom softvérovej architektúry a optimalizáciou modelov okrajového strojového učenia (TinyML) pre prediktívnu údržbu rotujúcich strojov v Priemysle 4.0. Dokument definuje oficiálny slovenský a anglický názov projektu (VV-A1-03), akronym (VV-A1-04) a podrobnú anotáciu (VV-A1-09) vrátane teoretického opodstatnenia a citácie z karentovanej literatúry.
+Projekt \textbf{SOUND-EDGE} sa zaoberá výskumom softvérovej architektúry a optimalizáciou modelov okrajového strojového učenia (TinyML) pre prediktívnu údržbu rotujúcich strojov v prostredí Priemyslu 4.0. Tradičné cloudové prístupy k diagnostike trpia vysokou latenciou, vysokou spotrebou sieťového pásma a rizikami spojenými s bezpečnosťou prenášaných dát. Navrhované riešenie využíva nízkonákladové IoT zariadenia na lokálnu analýzu akustických a vibračných signálov v reálnom čase priamo v mieste ich vzniku. Hlavným cieľom práce je návrh a simulačné vyhodnotenie ľahkých neurónových sietí schopných včasne detegovať mikroskopické poruchy ložísk a motorov. Výsledkom je posun z teoretického konceptu do fázy softvérovo overeného riešenia (posun z TRL 3 na TRL 4), ktoré podnikom poskytne efektívny nástroj na znižovanie nákladov na údržbu a predchádzanie neplánovaným odstávkam.
 \end{abstract}
 
-\section{Spresnenie zamerania projektu (Formulár APVV VV-A1)}
+\section{Spresnenie zamerania projektu}
 
 Na základe požiadaviek výzvy pre aplikovaný výskum uvádzame spresnenie troch kľúčových položiek formulára žiadosti:
 
-\subsection*{VV-A1-03: Názov projektu / Project Title}
+\subsection*{Názov projektu / Project Title}
 \begin{itemize}
     \item \textbf{Slovenský názov:} Akustická prediktívna údržba priemyselných zariadení pomocou okrajového strojového učenia a IoT
     \item \textbf{Anglický názov:} Acoustic Predictive Maintenance of Industrial Equipment Using Edge Machine Learning and IoT
 \end{itemize}
 
-\subsection*{VV-A1-04: Akronym projektu}
+\subsection*{Akronym projektu}
 \begin{itemize}
     \item \textbf{Akronym:} SOUND-EDGE
 \end{itemize}
 
-\subsection*{VV-A1-09: Anotácia projektu}
+\subsection*{Anotácia projektu}
 Projekt SOUND-EDGE sa zameriava na výskum a vývoj inovatívneho systému prediktívnej údržby pre rotujúce stroje (motory, ložiská) v prostredí Priemyslu 4.0. Tradičné prístupy vyžadujú odosielanie veľkého množstva surových senzorových dát (napríklad vibrácií a akustických signálov) do cloudových úložísk. Tento prístup spôsobuje vysokú latenciu, enormnú spotrebu sieťového pásma a potenciálne bezpečnostné riziká. Komerčné riešenia sú navyše pre mnohé malé a stredné podniky finančne nákladné.
 
-Tento projekt rieši spomenuté problémy využitím technológie TinyML (okrajové strojové učenie -- Edge AI). Hlavným cieľom je navrhnúť architektúru a optimalizované softvérové modely hlbokých neurónových sietí, ktoré sú prispôsobené pre analýzu akustických a vibračných signálov priamo v prostredí nízkonákladových, energeticky obmedzených IoT zariadení. Ako uvádzajú odborné štúdie v oblasti priemyselnej diagnostiky, spracovanie dát priamo na zariadení výrazne znižuje spotrebu energie spojenú s bezdrôtovým prenosom dát a zvyšuje celkovú odozvu a súkromie systému~\cite{Abati:2024}. Cloudové služby budú v navrhovanej architektúre využité výhradne na agregáciu sumárnych štatistík anomálií, čím sa minimalizuje objem prenášaných dát.
+Tento projekt rieši spomenuté problémy využitím technológie TinyML (okrajové strojové učenie -- Edge AI). Hlavným cieľom je navrhnúť architektúru a optimalizované softvérové modely hlbokých neurónových sietí, ktoré sú prispôsobené pre analýzu akustických a vibračných signálov priamo v prostredí nízkonákladových, energeticky obmedzených IoT zariadení. Spracovanie dát priamo na okraji siete výrazne znižuje spotrebu energie spojenú s bezdrôtovým prenosom dát, znižuje latenciu a zvyšuje celkovú bezpečnosť systému~\cite{10781407}. Cloudové služby budú v navrhovanej architektúre využité výhradne na agregáciu sumárnych štatistík anomálií, čím sa minimalizuje objem prenášaných dát.
 
-Hlavným výstupom projektu bude návrh softvérovej architektúry a simulačný model TinyML algoritmu, ktorý bude laboratórne otestovaný a vyhodnotený na dostupných benchmarkových priemyselných datasetoch (napr. databázy porúch ložísk NASA a CWRU). Výskum zabezpečí posun z teoretického konceptu do fázy softvérovo overeného riešenia (posun z TRL 3 na TRL 4). Navrhnutá metodika a simulačné experimenty preukážu schopnosť systému včasne detegovať mikroskopické poruchy, čo podnikom poskytne overený základ pre znižovanie nákladov na údržbu a predlžovanie životnosti výrobných zariadení.
-
-\section{Vedecké opodstatnenie a rešeršný základ}
-
-Projekt stavia na nedávnych poznatkoch v oblasti spájania IoT architektúr a ľahkých modelov strojového učenia. Kľúčové tvrdenie o energetickej úspornosti a znížení latencie pri spracovaní dát priamo na okraji siete (Edge AI) je podporované výskumom Abati et al.~\cite{Abati:2024}, kde autori preukázali, že prenos nespracovaných akustických signálov je rádovo energeticky náročnejší než lokálna inferencia na mikrokontroléri.
-
-Pre overenie vlastností navrhovaného algoritmického riešenia budú v rámci simulačných experimentov použité štandardné benchmarkové súbory dát, predovšetkým dataset NASA Bearing~\cite{NASA:Bearing}, ktorý obsahuje kontinuálne záznamy vibrácií až do štádia zlyhania ložiska.
-
-\bibliographystyle{abbrv}
+Hlavným výstupom projektu bude návrh softvérovej architektúry a simulačný model TinyML algoritmu, ktorý bude laboratórne otestovaný a vyhodnotený na dostupných benchmarkových priemyselných datasetoch. Pre overenie vlastností navrhovaného algoritmického riešenia budú v rámci simulačných experimentov použité štandardné súbory dát, predovšetkým dataset NASA Bearing~\cite{NASA:Bearing}, ktorý obsahuje kontinuálne záznamy vibrácií až do štádia zlyhania ložiska. Výskum zabezpečí posun z teoretického konceptu do fázy softvérovo overeného riešenia (posun z TRL 3 na TRL 4). Navrhnutá metodika a simulačné experimenty preukážu schopnosť systému včasne detegovať mikroskopické poruchy, čo podnikom poskytne overený základ pre znižovanie nákladov na údržbu a predlžovanie životnosti výrobných zariadení.\bibliographystyle{unsrt}
 \bibliography{literatura}
 
 \end{document}
