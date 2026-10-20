@@ -1,0 +1,9 @@
+VV-A - evidencne cislo vypisuje agentura
+	-datum podania je datum odovzdania zadania
+	A2 - ziadatel je skola
+	A3 - clenovia timu, kazdy asi 100h odpracoval, ICO je skola
+	A4 - p. doc. Lang, staci jeho projekty/literaturu
+VV-C - nejak rozpis rozpocet do 300k
+VV-D - harmonogram???
+VV-E - skola, rektor
+VV-F - 
