@@ -6,3 +6,4 @@
 *.synctex(busy)
 .idea
 out/*
+*.uxf
