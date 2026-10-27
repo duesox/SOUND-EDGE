@@ -1,62 +1,174 @@
-\documentclass[11pt, a4paper]{article}
+% Metódy inžinierskej práce
 
-\usepackage[a4paper, margin=2.5cm]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[IL2]{fontenc}
+\documentclass[10pt,twoside,slovak,a4paper]{article}
+
 \usepackage[slovak]{babel}
-\babelprovide[import, onchar=ids fonts]{slovak}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{booktabs} % krajšie tabuľky
+\usepackage{tabularx} % tabuľky so zalamovaním textu v stĺpcoch
+\usepackage{hyperref} % odkazy v texte budú aktívne
 
-\usepackage{enumitem}
-\setlist[itemize]{label=-}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{url}
-\usepackage{indentfirst}%dhcvdshcvsd
-\usepackage{hyperref}
+\usepackage{cite}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    citecolor=blue,
-    urlcolor=cyan
-}
+\pagestyle{headings}
 
 \title{Akustická prediktívna údržba priemyselných zariadení pomocou okrajového strojového učenia a IoT\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2026/2027, vedenie: Ing. Ivan Kapustík}}
 
 \author{Gabriela Tovarňáková, Pavel Ustimenko, Ján Vargovčík\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-}
+%	{\small \texttt{...@stuba.sk}} % doplňte e-mailové adresy
+	}
 
-\date{\small 4. október 2026}
+\date{\small 4. október 2026} % upravte
+
+
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-Projekt \textbf{SOUND-EDGE} sa zaoberá výskumom softvérovej architektúry a optimalizáciou modelov okrajového strojového učenia (TinyML) pre prediktívnu údržbu rotujúcich strojov v prostredí Priemyslu 4.0. Tradičné cloudové prístupy k diagnostike trpia vysokou latenciou, vysokou spotrebou sieťového pásma a rizikami spojenými s bezpečnosťou prenášaných dát. Navrhované riešenie využíva nízkonákladové IoT zariadenia na lokálnu analýzu akustických a vibračných signálov v reálnom čase priamo v mieste ich vzniku. Hlavným cieľom práce je návrh a simulačné vyhodnotenie ľahkých neurónových sietí schopných včasne detegovať mikroskopické poruchy ložísk a motorov. Výsledkom je posun z teoretického konceptu do fázy softvérovo overeného riešenia, ktoré podnikom poskytne efektívny nástroj na znižovanie nákladov na údržbu a predchádzanie neplánovaným odstávkam.
+Prediktívna údržba rotujúcich strojov sa dnes najčastejšie opiera o prenos surových vibračných a akustických záznamov do cloudu, čo zaťažuje sieť, predlžuje čas reakcie a vystavuje prevádzkové dáta riziku úniku. Okrajové strojové učenie (TinyML) umožňuje vyhodnocovať signály priamo v lacnom mikrokontroléri pri senzore. V článku sumarizujeme stav poznania, na ktorý nadväzuje navrhovaný projekt SOUND-EDGE: prejavy porúch ložísk a motorov vo vibráciách a zvuku, detekciu anomálií pomocou neurónových sietí a ich nasadzovanie na zariadenia s obmedzenými prostriedkami. Na tomto základe formulujeme ciele projektu a merateľné ukazovatele, podľa ktorých bude riešenie overené na verejne dostupných datasetoch.
 \end{abstract}
 
-\section{Spresnenie zamerania projektu}
+\noindent\textbf{Kľúčové slová:} prediktívna údržba, TinyML, okrajové výpočty, detekcia anomálií, ložiská, internet vecí
 
 
-\subsection*{Názov projektu}
-\begin{itemize}
-    \item Akustická prediktívna údržba priemyselných zariadení pomocou okrajového strojového učenia a IoT
-\end{itemize}
 
-\subsection*{Akronym projektu}
-\begin{itemize}
-    \item \textbf{Akronym:} SOUND-EDGE
-\end{itemize}
+\section{Úvod} \label{uvod}
 
-\subsection*{Anotácia projektu}
-Projekt SOUND-EDGE sa zameriava na výskum a vývoj inovatívneho systému prediktívnej údržby pre rotujúce stroje (motory, ložiská) v prostredí Priemyslu 4.0. Tradičné prístupy vyžadujú odosielanie veľkého množstva surových senzorových dát (napríklad vibrácií a akustických signálov) do cloudových úložísk. Tento prístup spôsobuje vysokú latenciu, enormnú spotrebu sieťového pásma a potenciálne bezpečnostné riziká. Komerčné riešenia sú navyše pre mnohé malé a stredné podniky finančne nákladné.
+Neplánované odstávky strojov patria v priemysle medzi najdrahšie udalosti. Údržba sa preto postupne posúva od opravy až po poruche cez preventívnu údržbu v pevných intervaloch k prediktívnej údržbe, pri ktorej sa o zásahu rozhoduje podľa aktuálneho stavu stroja~\cite{10781407}. Stav stroja sa pritom sleduje senzormi a vyhodnocuje metódami strojového učenia, ktorých využitie v diagnostike porúch v posledných rokoch výrazne narástlo~\cite{lei2020}.
 
-Tento projekt rieši spomenuté problémy využitím technológie TinyML (okrajové strojové učenie -- Edge AI). Hlavným cieľom je navrhnúť architektúru a optimalizované softvérové modely hlbokých neurónových sietí, ktoré sú prispôsobené pre analýzu akustických a vibračných signálov priamo v prostredí nízkonákladových, energeticky obmedzených IoT zariadení. Spracovanie dát priamo na okraji siete výrazne znižuje spotrebu energie spojenú s bezdrôtovým prenosom dát, znižuje latenciu a zvyšuje celkovú bezpečnosť systému~\cite{10781407}. Cloudové služby budú v navrhovanej architektúre využité výhradne na agregáciu sumárnych štatistík anomálií, čím sa minimalizuje objem prenášaných dát.
+Pri rotujúcich strojoch, ako sú elektromotory, čerpadlá alebo ventilátory, prezrádzajú najviac o ich stave vibrácie a zvuk. Bežné riešenia tieto signály posielajú na vyhodnotenie do cloudu. Jediný senzor však denne vyprodukuje gigabajty dát, čo zaťažuje sieť, zvyšuje oneskorenie (latenciu) a znamená, že citlivé prevádzkové údaje opúšťajú podnik. Shi a kol.~\cite{shi2016edge} preto presadzujú koncept okrajových výpočtov (angl. \emph{edge computing}), v ktorom sa dáta spracúvajú priamo tam, kde vznikajú. Najďalej tento princíp dovádza TinyML, teda strojové učenie bežiace priamo na mikrokontroléroch. Akustickú prediktívnu údržbu na okraji siete preto v tomto článku chápeme ako nepretržité sledovanie zvuku a vibrácií stroja priamo pri ňom, pri ktorom lacné zariadenie samo porovnáva aktuálny signál s naučeným správaním zdravého stroja a navonok hlási iba výsledok tohto porovnania, nie surové dáta. Primárnym východiskom nášho projektu bol prehľad Njora a kol.~\cite{10781407}, ktorý analyzuje celý reťazec TinyML pre prediktívnu údržbu a označuje ju za jednu z najsľubnejších oblastí využitia tejto technológie.
 
-Hlavným výstupom projektu bude návrh softvérovej architektúry a simulačný model TinyML algoritmu, ktorý bude laboratórne otestovaný a vyhodnotený na dostupných benchmarkových priemyselných datasetoch. Pre overenie vlastností navrhovaného algoritmického riešenia budú v rámci simulačných experimentov použité štandardné súbory dát, predovšetkým dataset NASA Bearing~\cite{NASA:Bearing}, ktorý obsahuje kontinuálne záznamy vibrácií až do štádia zlyhania ložiska. Výskum zabezpečí posun z teoretického konceptu do fázy softvérovo overeného riešenia. Navrhnutá metodika a simulačné experimenty preukážu schopnosť systému včasne detegovať mikroskopické poruchy, čo podnikom poskytne overený základ pre znižovanie nákladov na údržbu a predlžovanie životnosti výrobných zariadení.\bibliographystyle{unsrt}
+Prínos článku vidíme v tom, že prepája tri oblasti, ktoré sa v literatúre vyvíjajú prevažne oddelene -- diagnostiku ložísk z vibrácií, detekciu anomálií vo zvuku strojov a TinyML -- a na ich spoločnom základe formuluje ciele a merateľné ukazovatele navrhovaného projektu.
+
+V časti~\ref{prejavy} opisujeme, ako sa poruchy strojov prejavujú vo vibráciách a zvuku, a v časti~\ref{data} dostupné datasety. Časti~\ref{ml} a~\ref{tinyml} sa venujú metódam strojového učenia a ich nasadeniu na mikrokontroléry. Z otvorených problémov zhrnutých v časti~\ref{problemy} vychádza zámer projektu v časti~\ref{zamer}. Záverečné poznámky prináša časť~\ref{zaver}.
+
+
+
+\section{Prejavy porúch rotujúcich strojov} \label{prejavy}
+
+Lei a kol.~\cite{lei2020} rozdeľujú monitorovanie stavu strojov na \emph{detekciu} odchýlky od normálneho stavu, \emph{diagnostiku} typu poruchy a \emph{prognostiku} zostávajúcej životnosti. Projekt SOUND-EDGE sa zameriava na prvú z týchto úloh, keďže je predpokladom pre ďalšie dve a dá sa riešiť aj bez veľkého množstva dát o poruchách.
+
+Valivé ložiská patria medzi najčastejšie zlyhávajúce súčasti rotujúcich strojov. Ako vysvetľujú Randall a Antoni~\cite{randall2011}, drobné poškodenie obežnej dráhy vyvolá pri každom prechode valivého telesa krátky náraz, ktorý sa opakuje s frekvenciou závislou od otáčok a rozmerov ložiska. V počiatočnom štádiu sú však tieto nárazy slabé a prekrýva ich hluk ostatných častí stroja, preto ich klasická diagnostika odhaľuje špecializovanými metódami spracovania signálu, ktorých nastavenie vyžaduje odborníka. Strojové učenie ponúka možnosť naučiť sa takéto jemné zmeny rozpoznávať priamo z dát a zachytiť poškodenie skôr, než sa prejaví na celkovej sile vibrácií. Pre návrh modelu z toho vyplýva, že úsek signálu, ktorý model naraz spracúva, musí byť dostatočne dlhý, aby obsahoval viacero opakovaní nárazu.
+
+Vibrácie sa merajú akcelerometrom pripevneným na stroj. Mikrofón naopak nemusí byť so strojom v kontakte a môže sledovať viac strojov naraz. Je však oveľa citlivejší na okolitý hluk, a preto sa akustické modely vyhodnocujú na nahrávkach, ktoré hluk z prevádzky obsahujú~\cite{koizumi2020dcase}. Oba signály sa teda dopĺňajú, a preto ich projekt SOUND-EDGE plánuje kombinovať.
+
+
+
+\section{Dostupné datasety} \label{data}
+
+Hlavným datasetom projektu je dataset ložísk z repozitára NASA~\cite{NASA:Bearing}. Štyri ložiská na spoločnom hriadeli v ňom bežali pod záťažou až do zlyhania a ich vibrácie sa pravidelne zaznamenávali. Dataset tak zachytáva postupné opotrebenie: zo začiatku záznamu sa model môže naučiť, ako sa správa zdravé ložisko, a následne možno sledovať, kedy začne hlásiť odchýlku. Na rozdiel od datasetov s umelo vytvorenými poruchami tak lepšie zodpovedá tomu, ako porucha vzniká v skutočnej prevádzke.
+
+Pre zvukový kanál využijeme datasety MIMII so zvukmi skutočných priemyselných strojov a ToyADMOS so zvukmi ich zmenšených modelov. Koizumi a kol.~\cite{koizumi2020dcase} ich spojili v súťaži DCASE 2020 a zaviedli jednotný spôsob vyhodnotenia: model sa trénuje iba na zvukoch zdravých strojov a hodnotí sa, ako dobre odlíši zdravé zvuky od poruchových. Úspešnosť sa meria plochou pod ROC krivkou (AUC), kde 1 znamená dokonalé rozlíšenie a 0,5 náhodný odhad. Tento postup presne zodpovedá zámeru projektu porovnávať zvuk stroja so zvukom zdravých strojov.
+
+% TODO (finálna verzia): tabuľka prehľadu datasetov, samostatné zdroje
+% k datasetom MIMII a ToyADMOS.
+
+
+
+\section{Strojové učenie v diagnostike porúch} \label{ml}
+
+Lei a kol.~\cite{lei2020} opisujú vývoj inteligentnej diagnostiky od ručne počítaných príznakov signálu (napríklad efektívnej hodnoty RMS, ktorá vyjadruje celkovú silu vibrácií) a klasických klasifikátorov k hlbokému učeniu, pri ktorom sa neurónová sieť učí vhodné príznaky sama. Ako hlavné prekážky nasadenia v praxi pritom uvádzajú nedostatok dát o poruchách a ťažký prenos naučených modelov medzi rôznymi strojmi a prevádzkovými podmienkami.
+
+Nedostatok dát o poruchách rieši detekcia anomálií. Model sa pri nej učí iba to, ako vyzerá normálny stav stroja, a za podozrivé označí všetko, čo sa od neho výrazne líši. Častým modelom pre tento prístup je autoenkodér, teda neurónová sieť, ktorá vstup skomprimuje do menšej reprezentácie a z nej sa ho snaží čo najvernejšie zrekonštruovať. Keďže sa učí iba na dátach zo zdravých strojov, vstupy s poruchou rekonštruuje horšie a skóre anomálie možno počítať ako priemernú kvadratickú chybu rekonštrukcie
+\begin{equation}
+s(\mathbf{x}) = \frac{1}{N}\sum_{i=1}^{N} \left(x_i - \hat{x}_i\right)^2 ,
+\label{eq:skore}
+\end{equation}
+kde $x_i$ sú hodnoty vstupu, $\hat{x}_i$ ich rekonštrukcia a $N$ počet hodnôt. Ak skóre prekročí prah určený z normálnych dát, vstup sa označí ako anomálny. Koizumi a kol.~\cite{koizumi2020dcase} použili takýto autoenkodér nad spektrogramom zvuku ako referenčné riešenie súťaže DCASE 2020, s ktorým budeme naše modely porovnávať.
+
+
+
+\section{Strojové učenie na okraji siete} \label{tinyml}
+
+Shi a kol.~\cite{shi2016edge} uvádzajú ako hlavné výhody okrajových výpočtov nižšiu latenciu, menšiu záťaž siete, lepšiu ochranu dát a úsporu energie. TinyML ich prenáša na mikrokontroléry, ktoré majú len desiatky až stovky kilobajtov operačnej pamäte a spotrebu niekoľko miliwattov~\cite{10781407}. Njor a kol. preto rozdeľujú TinyML riešenie na niekoľko úrovní (dáta a ich predspracovanie, model, softvérový rámec a hardvér) a zdôrazňujú, že ich treba navrhovať spoločne, pretože rozhodnutie na jednej úrovni obmedzuje ostatné. Jedným z najrozšírenejších softvérových rámcov je pritom TensorFlow Lite for Microcontrollers.
+
+Na úrovni modelu sa najčastejšie využíva kvantizácia. Jacob a kol.~\cite{jacob2018} navrhli postup, pri ktorom sa namiesto 32-bitových desatinných čísel používajú 8-bitové celé čísla a výpočet prebieha iba v celočíselnej aritmetike. Model je tak približne štyrikrát menší a na jednoduchom procesore sa počíta rýchlejšie.
+
+Banbury a kol.~\cite{banbury2021mlperf} zostavili benchmark MLPerf Tiny, ktorý okrem presnosti meria aj rýchlosť a spotrebu energie modelov na reálnom hardvéri. Jednou z jeho úloh je práve detekcia anomálií vo zvuku strojov pomocou autoenkodéra, čo potvrdzuje, že prístup opísaný v časti~\ref{ml} je na mikrokontroléroch realizovateľný.
+
+% TODO (finálna verzia): rozšíriť o návrh modelov pre mikrokontroléry
+% a o existujúce okrajové akustické riešenia.
+
+
+
+\section{Otvorené problémy} \label{problemy}
+
+Z preštudovanej literatúry vyplývajú tri problémy, na ktoré projekt reaguje. Vibračná diagnostika ložísk~\cite{lei2020} a detekcia akustických anomálií~\cite{koizumi2020dcase} sa vyvíjajú oddelene, na rôznych datasetoch a s rôznymi metrikami, a nenašli sme riešenie, ktoré by oba signály kombinovalo na mikrokontroléri. Dát o skutočných poruchách je málo a naučené modely sa ťažko prenášajú medzi strojmi~\cite{lei2020}. Napokon, mnohé práce hodnotia iba presnosť modelu a neuvádzajú jeho pamäťovú náročnosť ani rýchlosť, hoci práve tie rozhodujú o nasaditeľnosti. Na tento nedostatok upozorňujú aj Njor a kol.~\cite{10781407} a snaží sa ho odstrániť benchmark MLPerf Tiny~\cite{banbury2021mlperf}.
+
+
+
+\section{Zámer projektu SOUND-EDGE} \label{zamer}
+
+Hlavným cieľom projektu je navrhnúť a simulačne overiť architektúru a modely strojového učenia, ktoré na lacnom mikrokontroléri v reálnom čase odhalia začínajúce poruchy ložísk a motorov zo zvuku a vibrácií bez posielania surových dát do cloudu. Hlavný cieľ rozpracúvajú štyri čiastkové ciele:
+
+\begin{description}
+\item[C1] návrh architektúry okrajového zariadenia od snímania signálu po odoslanie výsledkov,
+\item[C2] návrh a porovnanie malých modelov detekcie anomálií pre vibrácie a zvuk vrátane ich kombinácie,
+\item[C3] optimalizácia modelov pre mikrokontrolér (najmä kvantizácia) bez výraznej straty úspešnosti,
+\item[C4] vyhodnotenie na viacerých verejných datasetoch so správnym rozdelením trénovacích a testovacích dát.
+\end{description}
+
+Navrhovaná architektúra má tri vrstvy. Senzor (akcelerometer a mikrofón) je pripojený k mikrokontroléru triedy ARM Cortex-M4, ktorý signál rozdelí na krátke úseky, vypočíta skóre anomálie podľa vzťahu~(\ref{eq:skore}) a porovná ho s prahom. Do cloudu sa posielajú iba súhrnné výsledky (skóre, stav stroja a čas) na vizualizáciu a sledovanie trendov.
+
+Navrhované riešenie je v niektorých ohľadoch podobné existujúcim prácam. S referenčným riešením súťaže DCASE 2020 (časť~\ref{ml}) zdieľa princíp učenia sa iba normálneho správania stroja a autoenkodér ako východiskový model. S úlohou detekcie anomálií v benchmarku MLPerf Tiny (časť~\ref{tinyml}) má zasa spoločný zámer spúšťať takýto model priamo na mikrokontroléri. Od oboch sa líši tým, že kombinuje zvuk s vibráciami, vyhodnocuje sa aj na postupnom opotrebení ložísk z datasetu NASA a okrem úspešnosti detekcie sleduje aj objem prenášaných dát. Z inej oblasti je mu blízke rozpoznávanie aktivačného slova v hlasových asistentoch: aj tam mikrofón nepretržite počúva, zvuk sa vyhodnocuje lokálne na malom čipe a ďalej sa posiela až vtedy, keď sa zachytí hľadaná udalosť. Rozdiel je v tom, že asistent hľadá vopred známe slovo, kým náš systém hľadá akúkoľvek odchýlku od normálu, ktorej podobu vopred nepozná.
+
+% TODO (finálna verzia): diagram architektúry vytvorený v grafickom nástroji
+%\begin{figure*}[tbh]
+%\centering
+%\includegraphics[width=\textwidth]{diagram.pdf}
+%\caption{Architektúra systému SOUND-EDGE.}
+%\label{f:architektura}
+%\end{figure*}
+
+Modely budeme trénovať a vyhodnocovať na datasetoch NASA IMS, MIMII a ToyADMOS. Ako východisko na porovnanie použijeme prah na efektívnej hodnote vibrácií a referenčný autoenkodér zo súťaže DCASE 2020 (časť~\ref{ml}). Modely skvantizujeme na 8-bitové čísla, preložíme pre TensorFlow Lite for Microcontrollers a po vzore benchmarku MLPerf Tiny budeme okrem úspešnosti uvádzať aj pamäť a rýchlosť (časť~\ref{tinyml}). Zatiaľ stanovené merateľné ukazovatele uvádza tabuľka~\ref{tab:ukazovatele}.
+
+\begin{table}[tbh]
+\centering
+\caption{Merateľné ukazovatele projektu (p.\,b. -- percentuálne body).}
+\label{tab:ukazovatele}
+\small
+\begin{tabularx}{\textwidth}{@{}X X X@{}}
+\toprule
+\textbf{Ukazovateľ} & \textbf{Cieľová hodnota} & \textbf{Spôsob overenia} \\
+\midrule
+AUC detekcie (MIMII, ToyADMOS) & o 10 p.\,b. vyššia ako referencia DCASE & postup súťaže DCASE 2020 \\
+Pokles AUC po kvantizácii & najviac 2 p.\,b. & pôvodný vs. kvantizovaný model \\
+Veľkosť modelu & do 200 kB & údaje z prekladu modelu \\
+Čas spracovania 1 s signálu & do 200 ms & emulácia mikrokontroléra \\
+Úspora prenášaných dát & aspoň 99,9 \% & vzťah (\ref{eq:redukcia}) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Úsporu prenášaných dát vyjadríme ako
+\begin{equation}
+\eta = 1 - \frac{m \cdot k}{f_s \cdot b \cdot T},
+\label{eq:redukcia}
+\end{equation}
+kde $f_s$ je vzorkovacia frekvencia, $b$ počet bajtov na vzorku, $T$ sledované obdobie v sekundách, $m$ veľkosť jednej súhrnnej správy a $k$ počet správ za toto obdobie. Pre vzorkovanie 20~kHz s 2-bajtovými vzorkami a jednu 64-bajtovú správu za minútu klesne denný objem dát z približne 3,46~GB na 92~kB, čo zodpovedá úspore $\eta \approx 99{,}997$~\%.
+
+Výsledkom projektu bude softvérovo overené riešenie pripravené na pilotné nasadenie. Nízka cena hardvéru sprístupní prediktívnu údržbu aj malým a stredným podnikom a citlivé dáta zostanú v podniku.
+
+% TODO (finálna verzia): podrobnejšia metodika, ďalšie ukazovatele
+% (včasnosť detekcie na NASA IMS, potrebná RAM), očakávaný prínos.
+
+
+
+\section{Záver} \label{zaver}
+
+V článku sme zhrnuli, ako sa poruchy rotujúcich strojov prejavujú vo vibráciách a zvuku, aké dáta sú dostupné na ich výskum a ako ich možno vyhodnocovať neurónovými sieťami priamo na mikrokontroléri. Otvorená zostáva najmä kombinácia oboch signálov na jednom zariadení a spoľahlivé vyhodnocovanie modelov vrátane ich nasaditeľnosti. Na tieto otázky reaguje projekt SOUND-EDGE. V ďalšej fáze rozpracujeme metodiku a pripravíme diagram navrhovanej architektúry.
+
+
+
+% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literatura}
-
+\bibliographystyle{plain}
 \end{document}
