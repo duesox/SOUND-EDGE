@@ -21,10 +21,10 @@
 \author{Gabriela Tovarňáková, Pavel Ustimenko, Ján Vargovčík\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-%	{\small \texttt{...@stuba.sk}} % doplňte e-mailové adresy
+	{\small \texttt{xtovarnakova@stuba.sk, xustimenko@stuba.sk, xvargovcik@stuba.sk}} % doplňte e-mailové adresy
 	}
 
-\date{\small 4. október 2026} % upravte
+\date{\small27. október 2026} % upravte
 
 
 
@@ -68,8 +68,7 @@ Hlavným datasetom projektu je dataset ložísk z repozitára NASA~\cite{NASA:Be
 
 Pre zvukový kanál využijeme datasety MIMII so zvukmi skutočných priemyselných strojov a ToyADMOS so zvukmi ich zmenšených modelov. Koizumi a kol.~\cite{koizumi2020dcase} ich spojili v súťaži DCASE 2020 a zaviedli jednotný spôsob vyhodnotenia: model sa trénuje iba na zvukoch zdravých strojov a hodnotí sa, ako dobre odlíši zdravé zvuky od poruchových. Úspešnosť sa meria plochou pod ROC krivkou (AUC), kde 1 znamená dokonalé rozlíšenie a 0,5 náhodný odhad. Tento postup presne zodpovedá zámeru projektu porovnávať zvuk stroja so zvukom zdravých strojov.
 
-% TODO (finálna verzia): tabuľka prehľadu datasetov, samostatné zdroje
-% k datasetom MIMII a ToyADMOS.
+% TODO: tabulka prehladu datasetov
 
 
 
@@ -94,8 +93,7 @@ Na úrovni modelu sa najčastejšie využíva kvantizácia. Jacob a kol.~\cite{j
 
 Banbury a kol.~\cite{banbury2021mlperf} zostavili benchmark MLPerf Tiny, ktorý okrem presnosti meria aj rýchlosť a spotrebu energie modelov na reálnom hardvéri. Jednou z jeho úloh je práve detekcia anomálií vo zvuku strojov pomocou autoenkodéra, čo potvrdzuje, že prístup opísaný v časti~\ref{ml} je na mikrokontroléroch realizovateľný.
 
-% TODO (finálna verzia): rozšíriť o návrh modelov pre mikrokontroléry
-% a o existujúce okrajové akustické riešenia.
+% TODO rozsirit o návrh modelov pre mikrokontrolery a o existujuce okrajove akusticke riešenia.
 
 
 
@@ -120,7 +118,7 @@ Navrhovaná architektúra má tri vrstvy. Senzor (akcelerometer a mikrofón) je 
 
 Navrhované riešenie je v niektorých ohľadoch podobné existujúcim prácam. S referenčným riešením súťaže DCASE 2020 (časť~\ref{ml}) zdieľa princíp učenia sa iba normálneho správania stroja a autoenkodér ako východiskový model. S úlohou detekcie anomálií v benchmarku MLPerf Tiny (časť~\ref{tinyml}) má zasa spoločný zámer spúšťať takýto model priamo na mikrokontroléri. Od oboch sa líši tým, že kombinuje zvuk s vibráciami, vyhodnocuje sa aj na postupnom opotrebení ložísk z datasetu NASA a okrem úspešnosti detekcie sleduje aj objem prenášaných dát. Z inej oblasti je mu blízke rozpoznávanie aktivačného slova v hlasových asistentoch: aj tam mikrofón nepretržite počúva, zvuk sa vyhodnocuje lokálne na malom čipe a ďalej sa posiela až vtedy, keď sa zachytí hľadaná udalosť. Rozdiel je v tom, že asistent hľadá vopred známe slovo, kým náš systém hľadá akúkoľvek odchýlku od normálu, ktorej podobu vopred nepozná.
 
-% TODO (finálna verzia): diagram architektúry vytvorený v grafickom nástroji
+% TODO diagram architektury 
 %\begin{figure*}[tbh]
 %\centering
 %\includegraphics[width=\textwidth]{diagram.pdf}
@@ -157,8 +155,7 @@ kde $f_s$ je vzorkovacia frekvencia, $b$ počet bajtov na vzorku, $T$ sledované
 
 Výsledkom projektu bude softvérovo overené riešenie pripravené na pilotné nasadenie. Nízka cena hardvéru sprístupní prediktívnu údržbu aj malým a stredným podnikom a citlivé dáta zostanú v podniku.
 
-% TODO (finálna verzia): podrobnejšia metodika, ďalšie ukazovatele
-% (včasnosť detekcie na NASA IMS, potrebná RAM), očakávaný prínos.
+% TODO podrobnejsia metodika, dalsie ukazovatele (vcasnosť detekcie na NASA IMS, potrebna RAM), očakavany prinos.
 
 
 
@@ -166,9 +163,6 @@ Výsledkom projektu bude softvérovo overené riešenie pripravené na pilotné 
 
 V článku sme zhrnuli, ako sa poruchy rotujúcich strojov prejavujú vo vibráciách a zvuku, aké dáta sú dostupné na ich výskum a ako ich možno vyhodnocovať neurónovými sieťami priamo na mikrokontroléri. Otvorená zostáva najmä kombinácia oboch signálov na jednom zariadení a spoľahlivé vyhodnocovanie modelov vrátane ich nasaditeľnosti. Na tieto otázky reaguje projekt SOUND-EDGE. V ďalšej fáze rozpracujeme metodiku a pripravíme diagram navrhovanej architektúry.
 
-
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literatura}
 \bibliographystyle{plain}
 \end{document}
