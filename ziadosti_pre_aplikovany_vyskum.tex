@@ -43,17 +43,17 @@
 
 Tento projekt rieši spomenuté problémy využitím technológie TinyML (okrajové strojové učenie -- Edge AI). Hlavným cieľom je navrhnúť architektúru a optimalizované softvérové modely hlbokých neurónových sietí, ktoré sú prispôsobené pre analýzu akustických a vibračných signálov priamo v prostredí nízkonákladových, energeticky obmedzených IoT zariadení. Spracovanie dát priamo na okraji siete výrazne znižuje spotrebu energie spojenú s bezdrôtovým prenosom dát, znižuje latenciu a zvyšuje celkovú bezpečnosť systému. Cloudové služby budú v navrhovanej architektúre využité výhradne na agregáciu sumárnych štatistík anomálií, čím sa minimalizuje objem prenášaných dát.
 
-Hlavným výstupom projektu bude návrh softvérovej architektúry a model TinyML algoritmu, ktorý bude simulačne overený a vyhodnotený na dostupných benchmarkových priemyselných datasetoch. Pre overenie vlastností navrhovaného algoritmického riešenia budú v rámci simulačných experimentov použité štandardné súbory dát, predovšetkým dataset NASA Bearing, ktorý obsahuje kontinuálne záznamy vibrácií až do štádia zlyhania ložiska. Výskum zabezpečí posun z teoretického konceptu do fázy softvérovo overeného riešenia. Navrhnutá metodika a simulačné experimenty preukážu schopnosť systému včasne detegovať mikroskopické poruchy, čo podnikom poskytne overený základ pre znižovanie nákladov na údržbu a predlžovanie životnosti výrobných zariadení.}
+Hlavným výstupom projektu bude návrh softvérovej architektúry a model TinyML algoritmu, ktorý bude simulačne overený a vyhodnotený na dostupných benchmarkových priemyselných datasetoch. Pre overenie vlastností navrhovaného algoritmického riešenia budú v rámci simulačných experimentov použité štandardné súbory dát, predovšetkým dataset NASA IMS (Bearing Data Set), ktorý obsahuje kontinuálne záznamy vibrácií až do štádia zlyhania ložiska. Výskum zabezpečí posun z teoretického konceptu do fázy softvérovo overeného riešenia. Navrhnutá metodika a simulačné experimenty preukážu schopnosť systému včasne detegovať mikroskopické poruchy, čo podnikom poskytne overený základ pre znižovanie nákladov na údržbu a predlžovanie životnosti výrobných zariadení.}
 \WideField{09}{Annotation}{}{The SOUND-EDGE project focuses on developing an innovative predictive maintenance system for rotating machinery, such as motors and bearings, within Industry 4.0. Traditional solutions transmit large volumes of raw vibration and acoustic data to the cloud, causing high latency, excessive bandwidth consumption, and security risks. Commercial systems are also often too expensive for small and medium-sized enterprises (SMEs).
 
 The project addresses these challenges using TinyML (Edge AI) technology. Its main objective is to design a software architecture and optimized deep neural network models capable of analyzing acoustic and vibration signals directly on low-cost, energy-efficient IoT devices. Edge processing reduces wireless data transmission, energy consumption, latency, and security risks. Cloud services will be used only to aggregate anomaly statistics, minimizing transmitted data.
 
-The main outputs of the project will be a software architecture design and a model of a TinyML algorithm, which will be validated through simulation and evaluated on available industrial benchmark datasets. NASA Bearing dataset, containing continuous vibration recordings preceding bearing failure, will serve as the primary validation source.
+The main outputs of the project will be a software architecture design and a model of a TinyML algorithm, which will be validated through simulation and evaluated on available industrial benchmark datasets. The NASA IMS bearing dataset, containing continuous vibration recordings preceding bearing failure, will serve as the primary validation source.
 The research aims to transform a theoretical concept into a software-validated solution capable of detecting early-stage machinery faults. The results will provide SMEs with a foundation for reducing maintenance costs, preventing unexpected failures, and extending equipment lifespan.}
 \Field{10}{Žiadateľ}{Applicant}{Slovenská technická univerzita v Bratislave - Fakulta informatiky a informačných technológií / Slovak University of Technology in Bratislava - Faculty of Informatics and Information Technologies}
-\Field{11}{Požadované finančné prostriedky z APVV}{Required budget from the agency}{288 000,00 €}
+\Field{11}{Požadované finančné prostriedky z APVV}{Required budget from the agency}{52 500,00 €}
 \Field{12}{Spolufinancovanie projektu}{Financing from other sources}{0,00 €}
-\Field{13}{Celkové náklady na projekt}{Total project budget}{288 000,00 €}
+\Field{13}{Celkové náklady na projekt}{Total project budget}{52 500,00 €}
 \clearpage
 
 \SecHead{VV - A2}{Základné informácie o riešiteľských organizáciách}{Basic Information on Participating Organisations}
@@ -61,30 +61,35 @@ The research aims to transform a theoretical concept into a software-validated s
 \Field{02}{Skrátený názov}{Abbreviation}{STU / FIIT STU}
 \Field{03}{Adresa organizácie}{Organisation address}{Vazovova 5, 812 43 Bratislava}
 \Field{04}{IČO}{ID}{00397687}
-\Field{05}{Sektor}{Sector}{sektor vysokých škôl / university sector}
-\Field{06}{Forma hospodárenia}{Form of economy}{Vysoká škola / University}
-\Field{07}{Kontaktná osoba, telefón, e-mail}{Contact person, phone, e-mail}{/6029 1548}
-\Field{08}{Štatutárny zástupca}{Statutory representative}{Ing. prof. Maximilián Strémy, PhD.}
+\Field{05}{Príslušnosť k rezortu}{Governmental branch}{Ministerstvo školstva, výskumu, vývoja a mládeže SR / Ministry of Education, Research, Development and Youth of the Slovak Republic}
+\Field{06}{Forma hospodárenia}{Form of economy}{Verejná vysoká škola / Public university}
+\Field{07}{Kontaktná osoba / Telefón}{Contact person / Phone}{doc. Ing. Ján Lang, PhD. / 02/6029 1548}
+\Field{07}{Fax / E-mail}{Fax / E-mail}{-- / jan.lang@stuba.sk}
+\Field{08}{Štatutárny zástupca I}{Statutory representative I}{prof.~Ing. Maximilián Strémy, PhD.}
+\Field{09}{Štatutárny zástupca II}{Statutory representative II}{}
 \clearpage
 
 \SecHead{VV - A3}{Riešiteľský kolektív}{Participant List}
 \SectionTitle{01 Zoznam zamestnancov priamo sa podieľajúcich na riešení projektu / List of staff directly involved in project}
 \small
-\begin{longtable}{|p{29mm}|p{20mm}|p{31mm}|p{24mm}|p{21mm}|p{30mm}|}
-\hline\rowcolor{shade} Meno a priezvisko  Name and surname & Tituly / Titles & Pracovné zaradenie  Job/position & Dátum narodenia  Date of birth & IČO organizácie  Organisation ID & Zapojený do riešenia projektu v rokoch / Involved in the project during the years\\\hline\endfirsthead
-\hline\rowcolor{shade} Meno & Tituly & Pozícia & Narodenie & IČO & Roky\\\hline\endhead
-Ján Lang & doc. Ing., PhD. & Vysokoškolský učiteľ & & 00397687 & 2027--2030 \\\hline
-Gabriela Tovarňáková &  & Študentka vysokej školy & 08.05.2007 & 00397687 & 2027--2030 \\\hline
-Pavel Ustimenko &  & Študent vysokej školy & 16.01.2007 & 00397687 & 2027--2030 \\\hline
-Ján Vargovčík &  & Študent vysokej školy &  & 00397687 & 2027--2030 \\\hline
+\begin{longtable}{|>{\RaggedRight\arraybackslash}p{27mm}|>{\RaggedRight\arraybackslash}p{16mm}|>{\RaggedRight\arraybackslash}p{25mm}|>{\RaggedRight\arraybackslash}p{18mm}|>{\RaggedRight\arraybackslash}p{17mm}|>{\RaggedRight\arraybackslash}p{12mm}|>{\RaggedRight\arraybackslash}p{37mm}|}
+\hline\rowcolor{shade} Meno a priezvisko / Name and surname & Tituly / Titles & Pracovné zaradenie / Job/position & Dátum narodenia / Date of birth & IČO organizácie / Organisation ID & Počet hodín / Hours & Počet hodín v rokoch / Hours in years\\\hline\endfirsthead
+\hline\rowcolor{shade} Meno & Tituly & Pozícia & Narodenie & IČO & Hodiny & Hodiny v rokoch\\\hline\endhead
+Ján Lang & doc. Ing., PhD. & Vysokoškolský učiteľ & & 00397687 & 300 & 2027: 50, 2028: 100, 2029: 100, 2030: 50 \\\hline
+Gabriela Tovarňáková &  & Študentka vysokej školy & 08.05.2007 & 00397687 & 300 & 2027: 50, 2028: 100, 2029: 100, 2030: 50 \\\hline
+Pavel Ustimenko &  & Študent vysokej školy & 16.01.2007 & 00397687 & 300 & 2027: 50, 2028: 100, 2029: 100, 2030: 50 \\\hline
+Ján Vargovčík &  & Študent vysokej školy & 07.05.2007 & 00397687 & 300 & 2027: 50, 2028: 100, 2029: 100, 2030: 50 \\\hline
 \end{longtable}\normalsize
-\WideField{02}{Predpokladaná súhrnná kapacita ostatných osôb v hodinách}{Estimated total capacity of other staff in hours}{0}
+\Field{02}{Ostatní zamestnanci -- celkový počet ostatných osôb}{Other staff -- total number of other staff}{0}
+\Field{02}{Ostatní zamestnanci -- súhrnná kapacita ostatných osôb v hodinách}{Other staff -- total capacity of other staff in hours}{0}
+\Field{03}{Spolu -- celkový počet zamestnancov}{Total -- total number of involved staff}{4}
+\Field{03}{Spolu -- súhrnná kapacita zamestnancov v hodinách}{Total -- total capacity of involved staff in hours}{1 200}
 \clearpage
 
 \SecHead{VV - A4}{Základné informácie o zodpovednom riešiteľovi}{Basic Information on the Principal Investigator}
 \Field{01}{Meno a priezvisko}{Name and surname}{doc. Ing. Ján Lang, PhD.}
 \Field{02}{Pohlavie}{Gender}{Muž / Male}
-\Field{03}{Telefón}{Phone}{}
+\Field{03}{Telefón}{Phone}{+421 2 21022 306}
 \Field{04}{Emailová adresa}{Email Address}{jan.lang@stuba.sk}
 
 \WideField{}{Čestné vyhlásenie zodpovedného riešiteľa}{Declaration of Honour of the Principal Investigator}{Ja, dolu podpísaný/á, doc. Ing. Ján Lang, PhD., čestne vyhlasujem, že údaje uvedené v častiach „Základné informácie o zodpovednom riešiteľovi“ a v štruktúrovanom profesijnom životopise sú pravdivé.
@@ -101,8 +106,12 @@ I, the undersigned, doc. Ing. Ján Lang, PhD., declare that during the project i
 \WideField{}{Podpis, Miesto, Dátum}{Signature, Place, Date}{}
 
 \Field{05}{Zodpovedný riešiteľ je mladým vedeckým pracovníkom}{Principal investigator is young investigator}{Nie / No}
-\Field{06}{ID výskumníka}{Researcher ID}{ORCID: 0000-0002-3271-7271}
-\WideField{07}{Prehľad projektov zodpovedného riešiteľa realizovaných v priebehu posledných 5 rokov}{List of projects of the principal investigator realized in last 5 years}{APVV-23-0408 – Vyvíjanie architektonických znalostí v edge–cloud kontinuu / Evolving Architectural Knowledge in the Edge-to-Cloud Continuum; 2024–2028; 170 915 €; hlavný riešiteľ.}
+\Field{06a}{Typ vedeckej databázy}{Type of scientific database}{ORCID}
+\Field{06a}{ID výskumníka}{Researcher ID}{0000-0002-3271-7271}
+\WideField{07}{Prehľad projektov zodpovedného riešiteľa realizovaných v priebehu posledných 5 rokov v štruktúre: názov projektu, grantová schéma, roky realizácie, rozpočet projektu, pozícia}{List of projects of the principal investigator realized in last 5 years in structure: name of project, grant scheme, years of realization, project cost, position}{Vyvíjanie architektonických znalostí v edge–cloud kontinuu / Evolving Architectural Knowledge in the Edge-to-Cloud Continuum; APVV (APVV-23-0408); 2024–2028; 170 915 €; hlavný riešiteľ / principal investigator.
+
+Podpora personalizovaného vzdelávania explikovaná modelom / Model-Explicated Support for Personalized Education; KEGA (014STU-4/2024); 2024–2026; [doplniť rozpočet]; [doplniť pozíciu].}
+\Field{07}{Počet -- projekty zodpovedného riešiteľa realizované v priebehu posledných 5 rokov}{Number -- projects of the principal investigator realized in last 5 years}{2}
 \WideField{08}{Expertízy, konzultácie a ostatné výsledky s priamym využitím v hospodárskej a spoločenskej praxi za posledných 5 rokov}{Expertise, consultations, and other outcomes with direct application in economic and social practice over the past 5 years}{}
 \WideField{09}{Aplikačné výstupy - chránené}{Application outcomes - protected}{}
 \clearpage
@@ -118,30 +127,29 @@ predictive maintenance, TinyML, edge computing, anomaly detection, bearings, Int
 /
 
 The main objective of the project is to design and verify, via simulation, an architecture and machine learning models capable of detecting incipient bearing and motor faults in real time—using sound and vibration data on a low-cost microcontroller—without transmitting raw data to the cloud.}
-\WideField{03}{Prehľad plánovaných výstupov a prínosov projektu v nadväznosti na etapy riešenia projektu, ktoré budú verejne dostupné}{	Overview of the planned outputs and benefits of the project in relation to the phases of the project, which will be publicly available}{V prvej etape projektu SOUND-EDGE vznikne návrh softvérovej architektúry a metodika spracovania akustických a vibračných signálov s využitím datasetov NASA IMS, MIMII a ToyADMOS. V druhej etape budú vyvinuté a optimalizované modely TinyML na detekciu anomálií s cieľovou veľkosťou do 200 kB a poklesom úspešnosti po kvantizácii najviac o 2 percentuálne body. V záverečnej etape sa simulačne overí úspešnosť detekcie, čas spracovania signálov (do 200 ms na sekundu signálu) a zníženie objemu prenášaných dát (minimálne o 99,9 \%). Verejne dostupnými výstupmi budú odborná dokumentácia, metodika experimentálneho overovania a súhrn výsledkov, ktoré vytvoria základ pre budúci vývoj prototypu a priemyselné využitie.
-
-/
-
-In the first phase of SOUND-EDGE, a software architecture and a methodology for processing acoustic and vibration signals will be developed using the NASA IMS, MIMII, and ToyADMOS datasets. In the second phase, TinyML anomaly detection models will be developed and optimized, targeting a model size below 200 kB and a maximum performance decrease of 2 percentage points after quantization. The final phase will involve simulation-based evaluation of detection performance, processing time (under 200 ms per second of signal), and transmitted data reduction (at least 99.9\%). Public outputs will include technical documentation, an experimental evaluation methodology, and a summary of results, providing a foundation for future prototype development and industrial applications.}
-
-\WideField{04}{Uveďte zaradenie projektu do príslušnej TRL stupnice}{Indicate the Project's TRL level}{TRL 2. Formulovanie technologického konceptu
+\WideField{03}{Uveďte zaradenie projektu do príslušnej TRL stupnice}{Indicate the Project's TRL level}{TRL 2. Formulovanie technologického konceptu
 
 /
 
 TRL 2. Technology concept formulated}
-\WideField{04}{Uveďte zdôvodnenie zaradenia projektu do príslušnej TRL stupnice}{Explain the indicated Project's TRL level}{Projekt SOUND-EDGE je zaradený do úrovne technologickej pripravenosti TRL 2 – formulovanie technologického konceptu, a počas svojho riešenia plánuje dosiahnuť úroveň TRL 3 – experimentálne potvrdenie konceptu. Projekt vychádza z tejto úrovne, keďže na základe analýzy súčasného stavu poznania bola formulovaná koncepcia systému prediktívnej údržby priemyselných zariadení využívajúceho strojové učenie (TinyML) na detekciu anomálií v akustických a vibračných signáloch. Boli identifikované vhodné metódy, verejne dostupné datasety NASA IMS, MIMII a ToyADMOS a základné požiadavky na architektúru riešenia. V rámci projektu bude navrhovaný koncept overený prostredníctvom simulačných experimentov, čím sa predpokladá dosiahnutie úrovne TRL 3.
+\WideField{03}{Uveďte zdôvodnenie zaradenia projektu do príslušnej TRL stupnice}{Explain the indicated Project's TRL level}{Projekt SOUND-EDGE je zaradený do úrovne technologickej pripravenosti TRL 2 – formulovanie technologického konceptu, a počas svojho riešenia plánuje dosiahnuť úroveň TRL 3 – experimentálne potvrdenie konceptu. Projekt vychádza z tejto úrovne, keďže na základe analýzy súčasného stavu poznania bola formulovaná koncepcia systému prediktívnej údržby priemyselných zariadení využívajúceho strojové učenie (TinyML) na detekciu anomálií v akustických a vibračných signáloch. Boli identifikované vhodné metódy, verejne dostupné datasety NASA IMS, MIMII a ToyADMOS a základné požiadavky na architektúru riešenia. V rámci projektu bude navrhovaný koncept overený prostredníctvom simulačných experimentov, čím sa predpokladá dosiahnutie úrovne TRL 3.
 
 /
 
 The SOUND-EDGE project is classified at Technology Readiness Level TRL 2 – technology concept formulated, and aims to reach TRL 3 – experimental proof of concept during its implementation. The project builds on this level, as a concept for a predictive maintenance system using TinyML to detect anomalies in acoustic and vibration signals from industrial machinery has been formulated based on an analysis of the current state of research. Suitable methods, publicly available datasets (NASA IMS, MIMII, and ToyADMOS), and basic architectural requirements have been identified. During the project, the proposed concept will be validated through simulation experiments, with the aim of reaching TRL 3.}
-\WideField{04}{Uveďte zaradenie výstupov projektu do príslušnej TRL stupnice s popisom charakteru výstupov}{Indicate the inclusion of project outputs in the relevant TRL scale with the description of the outputs}{Výstupy projektu SOUND-EDGE budú zodpovedať úrovni technologickej pripravenosti TRL 3 – experimentálne overenie princípu. Hlavnými výstupmi budú návrh softvérovej architektúry a optimalizované modely TinyML na detekciu anomálií v akustických a vibračných signáloch priemyselných zariadení. Funkčnosť navrhovaného riešenia bude overená prostredníctvom simulačných experimentov na verejne dostupných datasetoch NASA IMS, MIMII a ToyADMOS. Vyhodnocovaná bude úspešnosť detekcie, pamäťová náročnosť modelov, čas spracovania a objem prenášaných dát. Projekt sa zameriava na experimentálne overenie technologického princípu v simulačnom prostredí. Dosiahnuté výsledky vytvoria základ pre následný vývoj integrovaného prototypu a jeho budúce laboratórne a priemyselné overenie.
+\WideField{03}{Uveďte zaradenie výstupov projektu do príslušnej TRL stupnice s popisom charakteru výstupov}{Indicate the inclusion of project outputs in the relevant TRL scale with the description of the outputs}{Výstupy projektu SOUND-EDGE budú zodpovedať úrovni technologickej pripravenosti TRL 3 – experimentálne overenie princípu. Hlavnými výstupmi budú návrh softvérovej architektúry a optimalizované modely TinyML na detekciu anomálií v akustických a vibračných signáloch priemyselných zariadení. Funkčnosť navrhovaného riešenia bude overená prostredníctvom simulačných experimentov na verejne dostupných datasetoch NASA IMS, MIMII a ToyADMOS. Vyhodnocovaná bude úspešnosť detekcie, pamäťová náročnosť modelov, čas spracovania a objem prenášaných dát. Projekt sa zameriava na experimentálne overenie technologického princípu v simulačnom prostredí. Dosiahnuté výsledky vytvoria základ pre následný vývoj integrovaného prototypu a jeho budúce laboratórne a priemyselné overenie.
 
 /
 
 The expected outputs of the SOUND-EDGE project correspond to Technology Readiness Level TRL 3 – experimental proof of concept. The main outputs will include a software architecture design and optimized TinyML models for anomaly detection in acoustic and vibration signals from industrial machinery. The proposed solution will be evaluated through simulation experiments using publicly available datasets NASA IMS, MIMII, and ToyADMOS. Evaluation will focus on detection performance, model memory requirements, processing latency, and transmitted data volume. The project focuses on experimentally validating the technological concept in a simulation environment. The achieved results will provide a foundation for the subsequent development of an integrated prototype and its future validation in laboratory and industrial environments.}
-\WideField{05}{Využitie výsledkov riešenia v praxi - Odberateľ (realizátor) výsledkov je žiadateľ}{Project outcomes applications in practice - Outcomes customers (user) is applicant}{Áno/Yes}
-\WideField{05}{Využitie výsledkov riešenia v praxi - Odberateľ (realizátor) výsledkov je iný odoberateľ}{Project outcomes applications in practice - Outcomes customres (user) is other user}{Nie/No}
-\WideField{05}{Využitie výsledkov riešenia v praxi - Iný odberateľ}{Project outcomes applications in practice - Other user (name of the organization)}{}
+\WideField{04}{Využitie výsledkov riešenia v praxi - Odberateľ (realizátor) výsledkov je žiadateľ}{Project outcomes applications in practice - Outcomes customers (user) is applicant}{Áno/Yes}
+\WideField{04}{Využitie výsledkov riešenia v praxi - Odberateľ (realizátor) výsledkov je iný odoberateľ}{Project outcomes applications in practice - Outcomes customres (user) is other user}{Nie/No}
+\WideField{04}{Využitie výsledkov riešenia v praxi - Iný odberateľ}{Project outcomes applications in practice - Other user (name of the organization)}{}
+\WideField{05}{Prehľad plánovaných výstupov a prínosov projektu v nadväznosti na etapy riešenia projektu, ktoré budú verejne dostupné}{Overview of the planned outputs and benefits of the project in relation to the phases of the project, which will be publicly available}{V prvej etape projektu SOUND-EDGE vznikne návrh softvérovej architektúry a metodika spracovania akustických a vibračných signálov s využitím datasetov NASA IMS, MIMII a ToyADMOS. V druhej etape budú vyvinuté a optimalizované modely TinyML na detekciu anomálií s cieľovou veľkosťou do 200 kB a poklesom úspešnosti po kvantizácii najviac o 2 percentuálne body. V záverečnej etape sa simulačne overí úspešnosť detekcie, čas spracovania signálov (do 200 ms na sekundu signálu) a zníženie objemu prenášaných dát (minimálne o 99,9 \%). Verejne dostupnými výstupmi budú odborná dokumentácia, metodika experimentálneho overovania a súhrn výsledkov, ktoré vytvoria základ pre budúci vývoj prototypu a priemyselné využitie.
+
+/
+
+In the first phase of SOUND-EDGE, a software architecture and a methodology for processing acoustic and vibration signals will be developed using the NASA IMS, MIMII, and ToyADMOS datasets. In the second phase, TinyML anomaly detection models will be developed and optimized, targeting a model size below 200 kB and a maximum performance decrease of 2 percentage points after quantization. The final phase will involve simulation-based evaluation of detection performance, processing time (under 200 ms per second of signal), and transmitted data reduction (at least 99.9\%). Public outputs will include technical documentation, an experimental evaluation methodology, and a summary of results, providing a foundation for future prototype development and industrial applications.}
 \clearpage
 
 \SecHead{VV - C}{Plánovaný rozpočet}{Planned Budget}
@@ -149,190 +157,191 @@ The expected outputs of the SOUND-EDGE project correspond to Technology Readines
 \begin{longtable}{|p{74mm}|r|r|r|r|r|}
 \hline\rowcolor{shade} Položka / Item & 2027 & 2028 & 2029 & 2030 & Celkovo / Total\\\hline\endfirsthead
 \hline\rowcolor{shade} Položka / Item & 2027 & 2028 & 2029 & 2030 & Celkovo / Total\\\hline\endhead
-01 Bežné priame náklady /  Direct running costs & 40 300 & 79 400 & 79 600 & 56 700 & 256 000\\\hline
-02 Mzdové náklady a ostatné osobné náklady / Wage and other personal costs & 25 000 & 50 000 & 50 000 & 35 000 & 160 000\\\hline
-03 Zdravotné a sociálne poistenie / Social and health insurance & 8 500 & 17 000 & 17 000 & 12 000 & 54 500\\\hline
-04 Cestovné náklady / Travel costs & 1 000 & 3 000 & 3 000 & 2 000 & 9 000\\\hline
-05 Materiál / Material & 3 500 & 4 500 & 3 500 & 2 000 & 13 500\\\hline
-06 Služby / Services & 2 000 & 4 000 & 5 000 & 4 500 & 15 500\\\hline
-07 Energie, vodné, stočné, komunikácie / Energy, water, communications & 300 & 500 & 500 & 400 & 1 700\\\hline
-08 Náklady na popularizáciu / Popularization costs& 0 & 400 & 600 & 800 & 1 800\\\hline
-09 Bežné nepriame náklady / Indirect costs & 2 900 & 11 000 & 11 000 & 7 100 & 32 000\\\hline
+01 Bežné priame náklady /  Direct running costs & 7 625 & 14 450 & 14 050 & 7 625 & 43 750\\\hline
+02 Mzdové náklady a ostatné osobné náklady / Wage and other personal costs & 3 750 & 7 500 & 7 500 & 3 750 & 22 500\\\hline
+03 Zdravotné a sociálne poistenie / Social and health insurance & 1 275 & 2 550 & 2 550 & 1 275 & 7 650\\\hline
+04 Cestovné náklady / Travel costs & 500 & 1 000 & 1 000 & 500 & 3 000\\\hline
+05 Materiál / Material & 1 500 & 2 000 & 1 000 & 500 & 5 000\\\hline
+06 Služby / Services & 500 & 1 000 & 1 500 & 1 000 & 4 000\\\hline
+07 Energie, vodné, stočné, komunikácie / Energy, water, communications & 100 & 200 & 200 & 100 & 600\\\hline
+08 Náklady na popularizáciu / Popularization costs& 0 & 200 & 300 & 500 & 1 000\\\hline
+09 Bežné nepriame náklady / Indirect costs & 1 525 & 2 890 & 2 810 & 1 525 & 8 750\\\hline
+10 Bežné náklady spolu / Total running costs & 9 150 & 17 340 & 16 860 & 9 150 & 52 500\\\hline
 \rowcolor{shade}\textbf{Celkové náklady z APVV /
-Total costs from APVV} & \textbf{43 200} & \textbf{90 400} & \textbf{90 600} & \textbf{63 800} & \textbf{288 000}\\\hline
-Spolufinancovanie projektu /
-Financing from other sources & 0 & 0 & 0 & 0 & 0\\\hline
+Total costs from APVV} & \textbf{9 150} & \textbf{17 340} & \textbf{16 860} & \textbf{9 150} & \textbf{52 500}\\\hline
+Spolufinancovanie / Financing from other sources & 0 & 0 & 0 & 0 & 0\\\hline
+\quad Štátne (mimo zdrojov APVV) / State (outside sources APVV) & 0 & 0 & 0 & 0 & 0\\\hline
+\quad Zahraničné / Foreign & 0 & 0 & 0 & 0 & 0\\\hline
+\quad Súkromné / Private & 0 & 0 & 0 & 0 & 0\\\hline
+\rowcolor{shade}\textbf{Celkové náklady / Total costs} & \textbf{9 150} & \textbf{17 340} & \textbf{16 860} & \textbf{9 150} & \textbf{52 500}\\\hline
 \end{longtable}\normalsize
 \noindent Sumy v EUR. \par
 \SectionTitle{Rozpis predpokladaných nákladov uplatňovaných z APVV / List of expected costs covered by APVV – 2027}
-\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2027}{Mzdové náklady vo výške 25 000 € sú plánované na personálne zabezpečenie úvodnej etapy projektu, najmä analýzu datasetov NASA IMS, MIMII a ToyADMOS, návrh softvérovej architektúry SOUND-EDGE a prípravu referenčných metód detekcie anomálií. Náklady pokrývajú odbornú prácu riešiteľského tímu.
+\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2027}{Mzdové náklady vo výške 3 750 € pokrývajú 200 hodín práce riešiteľského tímu (každý zo štyroch riešiteľov 50 hodín) v úvodnom polroku projektu, najmä analýzu datasetov NASA IMS, MIMII a ToyADMOS, návrh softvérovej architektúry SOUND-EDGE a prípravu referenčných metód detekcie anomálií. Výpočet: zodpovedný riešiteľ 50 h × 30 € a traja študenti 3 × 50 h × 15 €.
 
 /
 
-Personnel costs of EUR 25,000 are planned for the initial project phase, particularly the analysis of the NASA IMS, MIMII, and ToyADMOS datasets, the design of the SOUND-EDGE software architecture, and the preparation of baseline anomaly detection methods. The costs cover the research team's professional work.}
-\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2027}{Náklady vo výške 8 500 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2027. Predstavujú 34 \% plánovaných mzdových nákladov.
+Personnel costs of EUR 3,750 cover 200 hours of the research team's work (50 hours for each of the four team members) in the first half-year of the project, particularly the analysis of the NASA IMS, MIMII, and ToyADMOS datasets, the design of the SOUND-EDGE software architecture, and the preparation of baseline anomaly detection methods. Calculation: principal investigator 50 h × EUR 30 and three students 3 × 50 h × EUR 15.}
+\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2027}{Náklady vo výške 1 275 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2027. Predstavujú 34 \% plánovaných mzdových nákladov.
 
 /
 
-Costs of EUR 8,500 represent the planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2027. They account for 34\% of the planned personnel costs.}
-\WideField{04}{Cestovné náklady / Travel costs}{2027}{Cestovné náklady vo výške 1 000 € sú určené na účasť na odborných pracovných stretnutiach a konzultáciách súvisiacich s návrhom architektúry systému, metódami spracovania signálov a problematikou prediktívnej údržby.
+Costs of EUR 1,275 represent the planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2027. They account for 34\% of the planned personnel costs.}
+\WideField{04}{Cestovné náklady / Travel costs}{2027}{Cestovné náklady vo výške 500 € sú určené na účasť na odborných pracovných stretnutiach a konzultáciách súvisiacich s návrhom architektúry systému, metódami spracovania signálov a problematikou prediktívnej údržby.
 
 /
 
-Travel costs of EUR 1,000 are allocated to professional meetings and consultations related to system architecture design, signal processing methods, and predictive maintenance.}
-\WideField{05}{Materiál / Material}{2027}{Materiálové náklady vo výške 3 500 € sú určené na drobné vývojové vybavenie, dátové úložiská a komponenty potrebné na prípravu a testovanie spracovania akustických a vibračných signálov. Nákupy budú využité pri softvérových a simulačných experimentoch.
+Travel costs of EUR 500 are allocated to professional meetings and consultations related to system architecture design, signal processing methods, and predictive maintenance.}
+\WideField{05}{Materiál / Material}{2027}{Materiálové náklady vo výške 1 500 € sú určené na drobné vývojové vybavenie a dátové úložisko potrebné na prípravu a testovanie spracovania akustických a vibračných signálov. Nákupy budú využité pri softvérových a simulačných experimentoch.
 
 /
 
-Material costs of EUR 3,500 are allocated to small-scale development equipment, data storage, and components required to prepare and test acoustic and vibration signal processing. These items will support software-based and simulation experiments.}
-\WideField{06}{Služby / Services}{2027}{Náklady na služby vo výške 2 000 € sú plánované na externé výpočtové a technické služby potrebné na prípravu dát, realizáciu úvodných experimentov a zabezpečenie vývojového prostredia projektu SOUND-EDGE.
+Material costs of EUR 1,500 are allocated to small-scale development equipment and data storage required to prepare and test acoustic and vibration signal processing. These items will support software-based and simulation experiments.}
+\WideField{06}{Služby / Services}{2027}{Náklady na služby vo výške 500 € sú plánované na externé výpočtové služby potrebné na prípravu dát a realizáciu úvodných experimentov.
 
 /
 
-Service costs of EUR 2,000 are planned for external computing and technical services required for data preparation, initial experiments, and the development environment of the SOUND-EDGE project.}
-\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2027}{Náklady vo výške 300 € sú plánované na primeranú časť energií a elektronickej komunikácie potrebnej na prevádzku výpočtovej techniky, prístup k výskumným dátam a koordináciu riešiteľského tímu.
+Service costs of EUR 500 are planned for external computing services required for data preparation and initial experiments.}
+\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2027}{Náklady vo výške 100 € sú plánované na primeranú časť energií a elektronickej komunikácie potrebnej na prevádzku výpočtovej techniky, prístup k výskumným dátam a koordináciu riešiteľského tímu.
 
 /
 
-Costs of EUR 300 are allocated to a proportionate share of energy and electronic communication expenses required for operating computing equipment, accessing research datasets, and coordinating the research team.}
-\WideField{09}{Bežné nepriame náklady / Indirect costs}{2027}{Nepriame náklady vo výške 2 900 € sú určené na administratívne, organizačné a prevádzkové zabezpečenie projektu zo strany Slovenskej technickej univerzity v Bratislave, ktoré nemožno priamo priradiť jednotlivým výskumným činnostiam.
+Costs of EUR 100 are allocated to a proportionate share of energy and electronic communication expenses required for operating computing equipment, accessing research datasets, and coordinating the research team.}
+\WideField{09}{Bežné nepriame náklady / Indirect costs}{2027}{Nepriame náklady vo výške 1 525 € predstavujú 20 \% bežných priamych nákladov a sú určené na administratívne, organizačné a prevádzkové zabezpečenie projektu zo strany Slovenskej technickej univerzity v Bratislave, ktoré nemožno priamo priradiť jednotlivým výskumným činnostiam.
 
 /
 
-Indirect costs of EUR 2,900 are allocated to administrative, organizational, and operational support provided by the Slovak University of Technology in Bratislava that cannot be directly attributed to individual research activities.}
+Indirect costs of EUR 1,525 represent 20\% of direct running costs and are allocated to administrative, organizational, and operational support provided by the Slovak University of Technology in Bratislava that cannot be directly attributed to individual research activities.}
 
 \SectionTitle{Rozpis predpokladaných nákladov uplatňovaných z APVV / List of expected costs covered by APVV – 2028}
-\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2028}{Mzdové náklady vo výške 50 000 € sú určené na vývoj a trénovanie modelov TinyML na detekciu anomálií v akustických a vibračných signáloch, implementáciu metód spracovania signálov a porovnávanie modelov s referenčnými riešeniami.
+\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2028}{Mzdové náklady vo výške 7 500 € pokrývajú 400 hodín práce riešiteľského tímu (každý zo štyroch riešiteľov 100 hodín) na vývoj a trénovanie modelov TinyML na detekciu anomálií v akustických a vibračných signáloch, implementáciu metód spracovania signálov a porovnávanie modelov s referenčnými riešeniami. Výpočet: zodpovedný riešiteľ 100 h × 30 € a traja študenti 3 × 100 h × 15 €.
 
 /
 
-Personnel costs of EUR 50,000 are allocated to developing and training TinyML models for anomaly detection in acoustic and vibration signals, implementing signal processing methods, and comparing the models with baseline solutions.}
-\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2028}{Náklady vo výške 17 000 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2028. Predstavujú 34 \% plánovaných mzdových nákladov.
+Personnel costs of EUR 7,500 cover 400 hours of the research team's work (100 hours for each of the four team members) on developing and training TinyML models for anomaly detection in acoustic and vibration signals, implementing signal processing methods, and comparing the models with baseline solutions. Calculation: principal investigator 100 h × EUR 30 and three students 3 × 100 h × EUR 15.}
+\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2028}{Náklady vo výške 2 550 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2028. Predstavujú 34 \% plánovaných mzdových nákladov.
 
 /
 
-Costs of EUR 17,000 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2028. They account for 34\% of planned personnel costs.}
-\WideField{04}{Cestovné náklady / Travel costs}{2028}{Cestovné náklady vo výške 3 000 € sú plánované na účasť na odborných konferenciách, výskumných podujatiach a pracovných stretnutiach zameraných na strojové učenie, spracovanie signálov a prediktívnu údržbu.
+Costs of EUR 2,550 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2028. They account for 34\% of planned personnel costs.}
+\WideField{04}{Cestovné náklady / Travel costs}{2028}{Cestovné náklady vo výške 1 000 € sú plánované na účasť na odbornej konferencii alebo výskumnom podujatí zameranom na strojové učenie, spracovanie signálov a prediktívnu údržbu.
 
 /
 
-Travel costs of EUR 3,000 are planned for participation in scientific conferences, research events, and professional meetings focusing on machine learning, signal processing, and predictive maintenance.}
-\WideField{05}{Materiál / Material}{2028}{Materiálové náklady vo výške 4 500 € sú plánované na drobné vývojové a výpočtové vybavenie, dátové úložiská a mikrokontrolérové vývojové komponenty potrebné na prípravu, optimalizáciu a testovanie modelov TinyML.
+Travel costs of EUR 1,000 are planned for participation in a scientific conference or research event focusing on machine learning, signal processing, and predictive maintenance.}
+\WideField{05}{Materiál / Material}{2028}{Materiálové náklady vo výške 2 000 € sú plánované na mikrokontrolérové vývojové dosky a drobné vývojové komponenty potrebné na prípravu, optimalizáciu a testovanie modelov TinyML.
 
 /
 
-Material costs of EUR 4,500 are allocated to small-scale development and computing equipment, data storage, and microcontroller development components needed to prepare, optimize, and test TinyML models.}
-\WideField{06}{Služby / Services}{2028}{Náklady na služby vo výške 4 000 € sú plánované na externé výpočtové kapacity, technické služby a podporu experimentálneho vyhodnocovania modelov strojového učenia na verejných datasetoch.
+Material costs of EUR 2,000 are allocated to microcontroller development boards and small development components needed to prepare, optimize, and test TinyML models.}
+\WideField{06}{Služby / Services}{2028}{Náklady na služby vo výške 1 000 € sú plánované na externé výpočtové kapacity potrebné na trénovanie a experimentálne vyhodnocovanie modelov strojového učenia na verejných datasetoch.
 
 /
 
-Service costs of EUR 4,000 are planned for external computing resources, technical services, and support for experimental evaluation of machine learning models using public datasets.}
-\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2028}{Náklady vo výške 500 € sú určené na primeranú časť prevádzky výpočtovej techniky, spotreby energie a elektronickej komunikácie potrebnej na realizáciu vývojových a simulačných experimentov.
+Service costs of EUR 1,000 are planned for external computing resources required for training and experimental evaluation of machine learning models using public datasets.}
+\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2028}{Náklady vo výške 200 € sú určené na primeranú časť prevádzky výpočtovej techniky, spotreby energie a elektronickej komunikácie potrebnej na realizáciu vývojových a simulačných experimentov.
 
 /
 
-Costs of EUR 500 are allocated to a proportionate share of computing equipment operation, energy consumption, and electronic communication required for development and simulation experiments.}
-\WideField{08}{Náklady na popularizáciu / Popularization costs}{2028}{Náklady na popularizáciu vo výške 400 € sú určené na prípravu a verejnú prezentáciu priebežných výsledkov projektu SOUND-EDGE, najmä informačných a prezentačných materiálov o využití TinyML v prediktívnej údržbe.
+Costs of EUR 200 are allocated to a proportionate share of computing equipment operation, energy consumption, and electronic communication required for development and simulation experiments.}
+\WideField{08}{Náklady na popularizáciu / Popularization costs}{2028}{Náklady na popularizáciu vo výške 200 € sú určené na prípravu a verejnú prezentáciu priebežných výsledkov projektu SOUND-EDGE, najmä informačných a prezentačných materiálov o využití TinyML v prediktívnej údržbe.
 
 /
 
-Dissemination costs of EUR 400 are allocated to preparing and publicly presenting interim results of the SOUND-EDGE project, particularly information and presentation materials on the use of TinyML in predictive maintenance.}
-\WideField{09}{Bežné nepriame náklady / Indirect costs}{2028}{Nepriame náklady vo výške 11 000 € sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie projektu zo strany STU, ktoré nemožno priamo priradiť jednotlivým výskumným aktivitám.
+Dissemination costs of EUR 200 are allocated to preparing and publicly presenting interim results of the SOUND-EDGE project, particularly information and presentation materials on the use of TinyML in predictive maintenance.}
+\WideField{09}{Bežné nepriame náklady / Indirect costs}{2028}{Nepriame náklady vo výške 2 890 € predstavujú 20 \% bežných priamych nákladov a sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie projektu zo strany STU, ktoré nemožno priamo priradiť jednotlivým výskumným aktivitám.
 
 /
 
-Indirect costs of EUR 11,000 are allocated to administrative, organizational, and general operational support provided by STU that cannot be directly attributed to individual research activities.}
+Indirect costs of EUR 2,890 represent 20\% of direct running costs and are allocated to administrative, organizational, and general operational support provided by STU that cannot be directly attributed to individual research activities.}
 
 \SectionTitle{Rozpis predpokladaných nákladov uplatňovaných z APVV / List of expected costs covered by APVV – 2029}
-\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2029}{Mzdové náklady vo výške 50 000 € sú určené na optimalizáciu a kvantizáciu modelov TinyML, realizáciu experimentov na datasetoch NASA IMS, MIMII a ToyADMOS a vyhodnocovanie úspešnosti detekcie, pamäťovej náročnosti a času spracovania.
+\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2029}{Mzdové náklady vo výške 7 500 € pokrývajú 400 hodín práce riešiteľského tímu (každý zo štyroch riešiteľov 100 hodín) na optimalizáciu a kvantizáciu modelov TinyML, realizáciu experimentov na datasetoch NASA IMS, MIMII a ToyADMOS a vyhodnocovanie úspešnosti detekcie, pamäťovej náročnosti a času spracovania. Výpočet: zodpovedný riešiteľ 100 h × 30 € a traja študenti 3 × 100 h × 15 €.
 
 /
 
-Personnel costs of EUR 50,000 are allocated to TinyML model optimization and quantization, conducting experiments using the NASA IMS, MIMII, and ToyADMOS datasets, and evaluating detection performance, memory requirements, and processing time.}
-\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2029}{Náklady vo výške 17 000 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2029. Predstavujú 34 \% plánovaných mzdových nákladov.
+Personnel costs of EUR 7,500 cover 400 hours of the research team's work (100 hours for each of the four team members) on TinyML model optimization and quantization, conducting experiments using the NASA IMS, MIMII, and ToyADMOS datasets, and evaluating detection performance, memory requirements, and processing time. Calculation: principal investigator 100 h × EUR 30 and three students 3 × 100 h × EUR 15.}
+\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2029}{Náklady vo výške 2 550 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2029. Predstavujú 34 \% plánovaných mzdových nákladov.
 
 /
 
-Costs of EUR 17,000 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2029. They account for 34\% of planned personnel costs.}
-\WideField{04}{Cestovné náklady / Travel costs}{2029}{Cestovné náklady vo výške 3 000 € sú plánované na odborné konferencie, prezentáciu priebežných výskumných výsledkov a konzultácie súvisiace s vyhodnocovaním modelov TinyML a ich nasaditeľnosťou.
+Costs of EUR 2,550 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2029. They account for 34\% of planned personnel costs.}
+\WideField{04}{Cestovné náklady / Travel costs}{2029}{Cestovné náklady vo výške 1 000 € sú plánované na odbornú konferenciu, prezentáciu priebežných výskumných výsledkov a konzultácie súvisiace s vyhodnocovaním modelov TinyML a ich nasaditeľnosťou.
 
 /
 
-Travel costs of EUR 3,000 are planned for scientific conferences, presentation of interim research results, and consultations related to the evaluation and deployability of TinyML models.}
-\WideField{05}{Materiál / Material}{2029}{Materiálové náklady vo výške 3 500 € sú alokované na dodatočné vývojové vybavenie, úložiská dát a drobné technické komponenty potrebné na experimentálne testovanie optimalizovaných modelov a spracovanie signálu.
+Travel costs of EUR 1,000 are planned for a scientific conference, presentation of interim research results, and consultations related to the evaluation and deployability of TinyML models.}
+\WideField{05}{Materiál / Material}{2029}{Materiálové náklady vo výške 1 000 € sú alokované na doplnenie dátového úložiska a drobné technické komponenty potrebné na experimentálne testovanie optimalizovaných modelov a spracovanie signálu.
 
 /
 
-Material costs of EUR 3,500 are allocated to additional development equipment, data storage, and small technical components needed for experimental testing of optimized models and signal processing.}
-\WideField{06}{Služby / Services}{2029}{Náklady na služby vo výške 5 000 € sú plánované na externé výpočtové a odborné technické služby potrebné pri rozsiahlejšom testovaní modelov, spracovaní výsledkov a porovnávaní experimentálnych konfigurácií.
+Material costs of EUR 1,000 are allocated to additional data storage and small technical components needed for experimental testing of optimized models and signal processing.}
+\WideField{06}{Služby / Services}{2029}{Náklady na služby vo výške 1 500 € sú plánované na externé výpočtové služby potrebné pri rozsiahlejšom testovaní modelov, spracovaní výsledkov a porovnávaní experimentálnych konfigurácií.
 
 /
 
-Service costs of EUR 5,000 are planned for external computing and specialist technical services required for extensive model testing, results processing, and comparison of experimental configurations.}
-\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2029}{Náklady vo výške 500 € pokryjú primeranú časť spotreby energie pri prevádzke výpočtovej techniky a elektronickej komunikácie potrebnej na realizáciu a koordináciu simulačných experimentov.
+Service costs of EUR 1,500 are planned for external computing services required for extensive model testing, results processing, and comparison of experimental configurations.}
+\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2029}{Náklady vo výške 200 € pokryjú primeranú časť spotreby energie pri prevádzke výpočtovej techniky a elektronickej komunikácie potrebnej na realizáciu a koordináciu simulačných experimentov.
 
 /
 
-Costs of EUR 500 will cover a proportionate share of energy consumption for computing equipment and electronic communication required to conduct and coordinate simulation experiments.}
-\WideField{08}{Náklady na popularizáciu / Popularization costs}{2029}{Náklady na popularizáciu vo výške 600 € sú plánované na verejnú prezentáciu priebežných experimentálnych výsledkov projektu, prípravu informačných materiálov a komunikáciu prínosov inteligentnej prediktívnej údržby.
+Costs of EUR 200 will cover a proportionate share of energy consumption for computing equipment and electronic communication required to conduct and coordinate simulation experiments.}
+\WideField{08}{Náklady na popularizáciu / Popularization costs}{2029}{Náklady na popularizáciu vo výške 300 € sú plánované na verejnú prezentáciu priebežných experimentálnych výsledkov projektu, prípravu informačných materiálov a komunikáciu prínosov inteligentnej prediktívnej údržby.
 
 /
 
-Dissemination costs of EUR 600 are planned for public presentation of interim experimental results, preparation of information materials, and communication of the benefits of intelligent predictive maintenance.}
-\WideField{09}{Bežné nepriame náklady / Indirect costs}{2029}{Nepriame náklady vo výške 11 000 € sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie experimentálnej etapy projektu zo strany STU.
+Dissemination costs of EUR 300 are planned for public presentation of interim experimental results, preparation of information materials, and communication of the benefits of intelligent predictive maintenance.}
+\WideField{09}{Bežné nepriame náklady / Indirect costs}{2029}{Nepriame náklady vo výške 2 810 € predstavujú 20 \% bežných priamych nákladov a sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie experimentálnej etapy projektu zo strany STU.
 
 /
 
-Indirect costs of EUR 11,000 are allocated to administrative, organizational, and general operational support provided by STU during the experimental phase of the project.}
+Indirect costs of EUR 2,810 represent 20\% of direct running costs and are allocated to administrative, organizational, and general operational support provided by STU during the experimental phase of the project.}
 
 \SectionTitle{Rozpis predpokladaných nákladov uplatňovaných z APVV / List of expected costs covered by APVV – 2030}
-\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2030}{Mzdové náklady vo výške 35 000 € sú určené na záverečné vyhodnotenie experimentov, porovnanie dosiahnutých výsledkov s merateľnými cieľmi projektu, dokončenie softvérovej dokumentácie a prípravu odborných výstupov.
+\WideField{02}{Mzdové náklady a ostatné osobné náklady / Wage and other personal costs}{2030}{Mzdové náklady vo výške 3 750 € pokrývajú 200 hodín práce riešiteľského tímu (každý zo štyroch riešiteľov 50 hodín) v záverečnom polroku projektu, najmä záverečné vyhodnotenie experimentov, porovnanie dosiahnutých výsledkov s merateľnými cieľmi projektu, dokončenie softvérovej dokumentácie a prípravu odborných výstupov. Výpočet: zodpovedný riešiteľ 50 h × 30 € a traja študenti 3 × 50 h × 15 €.
 
 /
 
-Personnel costs of EUR 35,000 are allocated to final experimental evaluation, comparison of achieved results with measurable project objectives, completion of software documentation, and preparation of scientific outputs.}
-\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2030}{Náklady vo výške 12 000 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2030. Predstavujú približne 34,3 \% plánovaných mzdových nákladov.
+Personnel costs of EUR 3,750 cover 200 hours of the research team's work (50 hours for each of the four team members) in the final half-year of the project, particularly final experimental evaluation, comparison of achieved results with measurable project objectives, completion of software documentation, and preparation of scientific outputs. Calculation: principal investigator 50 h × EUR 30 and three students 3 × 50 h × EUR 15.}
+\WideField{03}{Zdravotné a sociálne poistenie / 	Social and health insurance}{2030}{Náklady vo výške 1 275 € predstavujú plánované zákonné odvody zamestnávateľa na zdravotné a sociálne poistenie súvisiace s mzdovými nákladmi riešiteľského tímu v roku 2030. Predstavujú 34 \% plánovaných mzdových nákladov.
 
 /
 
-Costs of EUR 12,000 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2030. They account for approximately 34.3\% of planned personnel costs.}
-\WideField{04}{Cestovné náklady / Travel costs}{2030}{Cestovné náklady vo výške 2 000 € sú plánované na prezentáciu záverečných výsledkov na odborných podujatiach a pracovné stretnutia zamerané na možnosti ďalšieho vývoja a budúceho využitia riešenia.
+Costs of EUR 1,275 represent planned statutory employer contributions to health and social insurance related to the research team's personnel costs in 2030. They account for 34\% of planned personnel costs.}
+\WideField{04}{Cestovné náklady / Travel costs}{2030}{Cestovné náklady vo výške 500 € sú plánované na prezentáciu záverečných výsledkov na odbornom podujatí a pracovné stretnutia zamerané na možnosti ďalšieho vývoja a budúceho využitia riešenia.
 
 /
 
-Travel costs of EUR 2,000 are planned for presenting final results at scientific events and professional meetings focusing on further development and potential future applications of the solution.}
-\WideField{05}{Materiál / Material}{2030}{Materiálové náklady vo výške 2 000 € sú určené na doplnenie dátových úložísk a drobného technického vybavenia potrebného na dokončenie a archiváciu experimentov a výsledkov projektu.
+Travel costs of EUR 500 are planned for presenting final results at a scientific event and professional meetings focusing on further development and potential future applications of the solution.}
+\WideField{05}{Materiál / Material}{2030}{Materiálové náklady vo výške 500 € sú určené na doplnenie dátového úložiska potrebného na dokončenie a archiváciu experimentov a výsledkov projektu.
 
 /
 
-Material costs of EUR 2,000 are allocated to additional data storage and small technical equipment required to complete and archive project experiments and results.}
-\WideField{06}{Služby / Services}{2030}{Náklady na služby vo výške 4 500 € sú plánované na externé výpočtové a odborné služby súvisiace so záverečným overovaním výsledkov, technickým spracovaním dokumentácie a prípravou výskumných výstupov.
+Material costs of EUR 500 are allocated to additional data storage required to complete and archive project experiments and results.}
+\WideField{06}{Služby / Services}{2030}{Náklady na služby vo výške 1 000 € sú plánované na externé výpočtové a odborné služby súvisiace so záverečným overovaním výsledkov a prípravou výskumných výstupov.
 
 /
 
-Service costs of EUR 4,500 are planned for external computing and specialist services related to final results validation, technical documentation processing, and preparation of research outputs.}
-\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2030}{Náklady vo výške 400 € sú určené na primeranú časť prevádzky výpočtovej techniky, spotreby energie a elektronickej komunikácie počas záverečných experimentov a spracovania výsledkov.
+Service costs of EUR 1,000 are planned for external computing and specialist services related to final results validation and preparation of research outputs.}
+\WideField{07}{Energie, vodné, stočné, komunikácie / Energy, water, communications}{2030}{Náklady vo výške 100 € sú určené na primeranú časť prevádzky výpočtovej techniky, spotreby energie a elektronickej komunikácie počas záverečných experimentov a spracovania výsledkov.
 
 /
 
-Costs of EUR 400 are allocated to a proportionate share of computing equipment operation, energy consumption, and electronic communication during final experiments and results processing.}
-\WideField{08}{Náklady na popularizáciu / Popularization costs}{2030}{Náklady na popularizáciu vo výške 800 € sú určené na zverejnenie a verejnú prezentáciu záverečných výsledkov projektu SOUND-EDGE, prípravu popularizačných materiálov a komunikáciu možností budúceho využitia riešenia v priemyselnej praxi.
+Costs of EUR 100 are allocated to a proportionate share of computing equipment operation, energy consumption, and electronic communication during final experiments and results processing.}
+\WideField{08}{Náklady na popularizáciu / Popularization costs}{2030}{Náklady na popularizáciu vo výške 500 € sú určené na zverejnenie a verejnú prezentáciu záverečných výsledkov projektu SOUND-EDGE, prípravu popularizačných materiálov a komunikáciu možností budúceho využitia riešenia v priemyselnej praxi.
 
 /
 
-Dissemination costs of EUR 800 are allocated to publishing and publicly presenting the final results of SOUND-EDGE, preparing outreach materials, and communicating the potential future applications of the solution in industrial practice.}
-\WideField{09}{Bežné nepriame náklady / Indirect costs}{2030}{Nepriame náklady vo výške 7 100 € sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie záverečnej etapy projektu vrátane jeho ukončenia a finančného vyúčtovania.
+Dissemination costs of EUR 500 are allocated to publishing and publicly presenting the final results of SOUND-EDGE, preparing outreach materials, and communicating the potential future applications of the solution in industrial practice.}
+\WideField{09}{Bežné nepriame náklady / Indirect costs}{2030}{Nepriame náklady vo výške 1 525 € predstavujú 20 \% bežných priamych nákladov a sú určené na administratívne, organizačné a všeobecné prevádzkové zabezpečenie záverečnej etapy projektu vrátane jeho ukončenia a finančného vyúčtovania.
 
 /
 
-Indirect costs of EUR 7,100 are allocated to administrative, organizational, and general operational support for the final project phase, including project closure and financial reporting.}
-\clearpage
-
-\SecHead{VV - C}{Zoznam prístrojov a inej infraštruktúry}{List of Devices and Other Infrastructure}
-\WideField{}{Infraštruktúra}{Infrastructure}{Výpočtové pracovné stanice, dátové úložiská, nástroje TinyML.}
+Indirect costs of EUR 1,525 represent 20\% of direct running costs and are allocated to administrative, organizational, and general operational support for the final project phase, including project closure and financial reporting.}
 \clearpage
 
 \SecHead{VV - D}{Harmonogram projektu}{Project Schedule}
+\SectionTitle{01 Harmonogram projektu}
 \begin{longtable}{|p{20mm}|p{20mm}|p{51mm}|p{74mm}|}\hline
 \rowcolor{shade} Začiatok etapy & Koniec etapy & Názov etapy & Opis etapy\\\hline\endfirsthead
 \hline\rowcolor{shade} Start & End & Phase & Description\\\hline\endhead
@@ -340,11 +349,65 @@ Indirect costs of EUR 7,100 are allocated to administrative, organizational, and
 01.07.2028 & 30.06.2029 & Vývoj a optimalizácia modelov TinyML na detekciu anomálií & Návrh, implementácia a trénovanie modelov na detekciu anomálií v akustických a vibračných signáloch. Porovnanie s referenčnými metódami, preskúmanie možností kombinácie oboch typov signálov a optimalizácia modelov pomocou kvantizácie pre mikrokontroléry.\\\hline
 01.07.2029 & 30.06.2030 & Simulačné overenie a vyhodnotenie výsledkov projektu & Simulačné overenie modelov na datasetoch NASA IMS, MIMII a ToyADMOS. Vyhodnotenie úspešnosti detekcie, pamäťovej náročnosti, času spracovania a objemu prenášaných dát. Porovnanie s cieľovými ukazovateľmi, dokumentácia výsledkov a príprava podkladov pre budúci prototyp.\\\hline
 \end{longtable}
+\SectionTitle{02 Project schedule}
 \begin{longtable}{|p{20mm}|p{20mm}|p{51mm}|p{74mm}|}\hline
 \rowcolor{shade} Start of phase & End of phase & Phase name & Description\\\hline\endhead
 01.07.2027 & 30.06.2028 & Requirements Analysis and SOUND-EDGE System Architecture Design & Analysis of current research and the NASA IMS, MIMII, and ToyADMOS datasets. Design of the edge device architecture, acoustic and vibration signal processing methods, and baseline anomaly detection techniques. Definition of the experimental evaluation methodology.\\\hline
 01.07.2028 & 30.06.2029 & Development and Optimization of TinyML Anomaly Detection Models & Design, implementation, and training of acoustic and vibration anomaly detection models. Comparison with baseline methods, investigation of possible signal combination approaches, and optimization of models for microcontrollers using quantization.\\\hline
 01.07.2029 & 30.06.2030 & Simulation-Based Validation and Evaluation of Project Results & Simulation-based validation using the NASA IMS, MIMII, and ToyADMOS datasets. Evaluation of detection performance, memory requirements, processing time, and transmitted data volume. Comparison with target metrics, documentation of results, and preparation for future prototype development.\\\hline
 \end{longtable}
+\clearpage
+
+\SectionTitle{Zoznam prístrojov v projekte / List of Devices in Project}
+\begin{longtable}{|>{\RaggedRight\arraybackslash}p{50mm}|p{122mm}|}\hline
+\rowcolor{shade} Názov / Name & Popis / Description\\\hline\endhead
+Výpočtová pracovná stanica s grafickým akcelerátorom / Workstation with GPU & Trénovanie a porovnávanie modelov strojového učenia, kvantizácia a simulačné experimenty. / Training and comparison of machine learning models, quantization and simulation experiments.\\\hline
+Dátové úložisko / Data storage & Uchovávanie datasetov NASA IMS, MIMII a ToyADMOS, natrénovaných modelov a výsledkov experimentov. / Storage of the NASA IMS, MIMII and ToyADMOS datasets, trained models and experimental results.\\\hline
+Vývojové dosky s mikrokontrolérmi / Microcontroller development boards & Doplnkové overenie nasaditeľnosti optimalizovaných modelov (veľkosť modelu, pamäť); hlavné vyhodnotenie prebieha v simulačnom prostredí. / Supplementary check of deployability of optimized models (model size, memory); the main evaluation takes place in a simulation environment.\\\hline
+\end{longtable}
+\clearpage
+
+\SecHead{VV - E}{Čestné vyhlásenie štatutárneho zástupcu žiadateľskej organizácie}{Declaration of Honour of the Statutory representative of the Applicant organization}
+\noindent\begin{tabularx}{\textwidth}{|X|}\hline
+\textbf{Ja, dolu podpísaný/á prof.~Ing. Maximilián Strémy, PhD., štatutárny zástupca / štatutárna zástupkyňa záväzne vyhlasujem, že:}
+\begin{itemize}[leftmargin=12mm,itemsep=0pt,parsep=0pt,topsep=2pt]
+\item organizácia má platné osvedčenie o spôsobilosti vykonávať výskum a vývoj v zmysle podmienok stanovených vo verejnej výzve v súlade § 26a zákona č. 172/2005 Z.z. v znení neskorších predpisov a je evidovaná v zozname spôsobilých osôb vykonávať výskum a vývoj;
+\item všetky informácie obsiahnuté v dokumentácii návrhu sú pravdivé;
+\item organizácia má, resp. zabezpečí vlastné zdroje na spolufinancovanie projektu*;
+\item predložený návrh projektu nebol a nie je financovaný z iných zdrojov (národných alebo zahraničných);
+\item organizácia neposkytne žiadnu nepriamu štátnu pomoc v zmysle špecifických podmienok výzvy;
+\item organizácia nie je daňovým dlžníkom;
+\item organizácia nie je dlžníkom poistného na sociálnom poistení (dôchodkovom, nemocenskom, garančnom a úrazovom poistení, poistení v nezamestnanosti, poistení do rezervného fondu solidarity) a dlžníkom príspevkov na starobné dôchodkové sporenie;
+\item organizácia nie je dlžníkom poistného na zdravotnom poistení (za každú zdravotnú poisťovňu);
+\item organizácia nie je v likvidácii;
+\item voči organizácii nie je vedený výkon rozhodnutia (nie je relevantné pre subjekty verejnej správy);
+\item voči organizácii nebolo začaté konkurzné/reštrukturalizačné konanie (nie je relevantné pre subjekty verejnej správy);
+\item na majetok organizácie nie je vyhlásený konkurz (nie je relevantné pre subjekty verejnej správy);
+\item voči organizácii nebol zamietnutý návrh na vyhlásenie konkurzu pre nedostatok majetku (nie je relevantné pre subjekty verejnej správy);
+\item organizácia neporušila zákaz nelegálnej práce a nelegálneho zamestnávania podľa osobitého predpisu za obdobie od jeho účinnosti (1. Apríl 2005) a v prípade porušenia nelegálneho zamestnávania cudzinca podľa § 2 ods. 2 písm. c) zákona č. 82/2005 Z. z. o nelegálnej práci a nelegálnom zamestnávaní a o zmene a doplnení niektorých zákonov v znení neskorších predpisov za obdobie piatich rokov od porušenia tohto zákazu;
+\item organizácia má vysporiadané finančné vzťahy so štátnym rozpočtom;
+\item organizácia bude súčinná pri poskytovaní dokladov, ktoré preukazujú splnenie podmienok na poskytnutie dotácie v zmysle zákona 523/2004 Z. z.;
+\item som si vedomý/á povinnosti poskytnutia informácií o výskume a vývoji, na ktorý boli poskytnuté finančné prostriedky zo štátneho rozpočtu za účelom zverejnenia v súlade s platnou legislatívou SR;
+\item som si vedomý/á povinnosti zverejnenia informácií o technickej infraštruktúre výskumu a vývoja, ktorú budujeme z poskytnutých prostriedkov štátneho rozpočtu alebo z prostriedkov Európskej únie na centrálnom informačnom portáli;
+\item som si vedomý/á skutočnosti, že v zmysle znenia verejnej výzvy, APVV zverejní podľa § 19d ods. 4 zákona č. 172/2005 Z. z. v znení neskorších predpisov na webovej stránke www.apvv.sk rozhodnutie o žiadostiach odporučených aj neodporučených orgánom APVV na financovanie v rozsahu: číslo žiadosti, názov projektu, žiadateľ;
+\item som si vedomý/á povinnosti popularizovať výsledky riešenia projektu s cieľom zrozumiteľným spôsobom informovať verejnosť o prínosoch výsledkov a výstupov výskumu a vývoja;
+\item predložený návrh projektu po svojej obsahovej stránke nebude financovaný z národných zdrojov iných grantových schém ako z príslušnej grantovej schémy APVV.
+\end{itemize}
+\smallskip\textbf{Ako štatutárny zástupca / štatutárna zástupkyňa svojím podpisom zodpovedám za správnosť a pravdivosť údajov, uvedených v tejto elektronickej žiadosti.}
+
+\smallskip V prípade vyzvania zo strany APVV sa zaväzujem nahradiť toto čestné vyhlásenie aktuálnymi potvrdeniami príslušných úradov.
+
+\smallskip Som si vedomý/á, že v prípade zistenia, že údaje uvedené v predmetnom vyhlásení nie sú pravdivé, žiadosť bude vyradená alebo zmluva o poskytnutí prostriedkov nebude podpísaná, prípadne dôjde k odstúpeniu od zmluvy.
+
+\smallskip{\footnotesize * len v prípade povinnosti spolufinancovať projekt}\\[2pt]\hline
+\end{tabularx}\par\vspace{-1pt}
+\noindent\begin{tabularx}{\textwidth}{|>{\columncolor{shade}\bfseries\RaggedRight\arraybackslash}p{66mm}|X|}\hline
+Názov žiadateľskej organizácie & Slovenská technická univerzita v Bratislave \\\hline
+Meno štatutárneho zástupcu / štatutárnej zástupkyne (I, II) & prof.~Ing. Maximilián Strémy, PhD. \\\hline
+V zastúpení (uveďte čitateľne meno) & \\\hline
+Podpis štatutárneho zástupcu / štatutárnej zástupkyne & \rule{0pt}{10mm} \\\hline
+Miesto & Bratislava \\\hline
+Dátum & \\\hline
+\end{tabularx}
 \clearpage
 \end{document}
