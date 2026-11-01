@@ -193,7 +193,7 @@ Tretia etapa (07/2029 – 06/2030): Simulačné overenie modelov, vyhodnotenie �
 
 Pri experimentoch sa zabezpečí oddelenie trénovacích a testovacích údajov s ohľadom na časové a prevádzkové súvislosti, aby sa minimalizovalo riziko úniku informácií medzi dátovými množinami. Úspešnosť detekcie sa bude hodnotiť najmä metrikou AUC a doplnkovými ukazovateľmi relevantnými pre konkrétny dataset.
 
-Osobitne bude vyhodnotený vplyv kvantizácie na presnosť a pamäťovú náročnosť modelov. Výpočtová latencia bude posudzovaná v definovanom simulačnom alebo emulačnom prostredí; výsledky nebudú vydávané za merania na fyzickom mikrokontroléri, pokiaľ takéto merania nebudú uskutočnené.
+Osobitne bude vyhodnotený vplyv kvantizácie na presnosť a pamäťovú náročnosť modelov. Výpočtová latencia sa bude vyhodnocovať v emulačnom prostredí; overenie na fyzickom mikrokontroléri je predmetom nadväzujúceho vývoja.
 
 Metodológia zodpovedá plánovanej cieľovej úrovni technologickej pripravenosti TRL 3 – experimentálne potvrdenie konceptu.
 
@@ -344,7 +344,7 @@ Výstupy: Súhrnná experimentálna správa, metodika vyhodnocovania a odborná 
 \subsection*{3.2 Projektový manažment
 a procesy riadenia}
 
-Projekt bude koordinovaný zodpovedným riešiteľom doc. Ing. Jánom Langom, PhD., ktorý bude v rámci simulácie zabezpečovať odborné vedenie, koordináciu pracovných balíkov a kontrolu plnenia stanovených cieľov.
+Projekt bude koordinovaný zodpovedným riešiteľom doc. Ing. Jánom Langom, PhD., ktorý bude zabezpečovať odborné vedenie, koordináciu pracovných balíkov a kontrolu plnenia stanovených cieľov.
 
 Riešiteľský kolektív budú tvoriť členovia zapojení do návrhu architektúry, prípravy datasetov, implementácie a optimalizácie modelov a experimentálneho vyhodnocovania.
 
@@ -388,7 +388,7 @@ Projekt bude realizovaný na Fakulte informatiky a informačných technológií 
 
 Na riešenie projektu sa predpokladá využitie výpočtových pracovných staníc, dátových úložísk a softvérových vývojových nástrojov určených na spracovanie signálov, trénovanie modelov strojového učenia a simulačné experimenty.
 
-Softvérová infraštruktúra bude zahŕňať nástroje programovacieho jazyka Python, knižnice na spracovanie signálov a frameworky na implementáciu a optimalizáciu modelov neurónových sietí vrátane nástrojov pre TinyML.
+Softvérová infraštruktúra bude založená na jazyku Python a bude zahŕňať knižnice na spracovanie signálov, frameworky na návrh, trénovanie a optimalizáciu neurónových sietí a nástroje pre TinyML.
 
 Pri experimentálnom vyhodnocovaní sa budú využívať verejne dostupné datasety NASA IMS, MIMII a ToyADMOS. Ich použitie umožní realizáciu reprodukovateľných experimentov bez potreby rozsiahleho fyzického merania na priemyselných strojoch.
 
