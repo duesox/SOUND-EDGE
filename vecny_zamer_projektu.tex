@@ -1,0 +1,399 @@
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[slovak,english]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{ragged2e}
+
+\geometry{
+  left=2cm,
+  right=2cm,
+  top=2cm,
+  bottom=2cm
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\setstretch{1.05}
+
+% podkapitoly
+\titleformat{\subsection}
+  {\normalfont\normalsize}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\subsection}
+  {0pt}{12pt}{7pt}
+
+% hlavicka
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{18pt}
+
+\newcommand{\vvheader}[1]{
+  \noindent
+  \begin{tabularx}{\textwidth}{|p{2cm}|X|}
+  \hline
+  VV - F & \hfill #1 \\
+  \hline
+  \end{tabularx}
+  \vspace{10pt}
+}
+
+% tabulka
+\newcommand{\projecttableSK}{
+\begin{tabularx}{\textwidth}{|p{5cm}|X|}
+\hline
+Názov projektu &
+Akustická prediktívna údržba priemyselných
+zariadení pomocou okrajového strojového
+učenia a IoT \\ \hline
+
+Zodpovedný riešiteľ &
+Ján Lang \\ \hline
+
+Žiadateľ &
+Slovenská technická univerzita v Bratislave
+-- Fakulta informatiky a informačných
+technológií \\ \hline
+
+Štatutárny/i zástupca/ovia žiadateľa &
+Ing. prof. Maximilián Strémy, PhD. \\
+\hline
+\end{tabularx}
+}
+
+\newcommand{\projecttableEN}{
+\begin{tabularx}{\textwidth}{|p{5cm}|X|}
+\hline
+Project Title &
+Acoustic Predictive Maintenance of Industrial
+Equipment Using Edge Machine Learning and IoT
+\\ \hline
+
+Principal Investigator &
+Ján Lang \\ \hline
+
+Applicant &
+Slovak University of Technology in Bratislava
+-- Faculty of Informatics and Information
+Technologies \\ \hline
+
+Statutory Representative(s) of the Applicant &
+Ing. prof. Maximilián Strémy, PhD. \\
+\hline
+\end{tabularx}
+}
+
+\begin{document}
+
+\selectlanguage{slovak}
+
+\vvheader{Vecný zámer projektu}
+
+\begin{center}
+{\Large\bfseries
+Záväzná osnova pre aplikovaný výskum a vývoj
+}
+\end{center}
+
+\vspace{6pt}
+
+\projecttableSK
+
+\section*{1. Excelentnosť}
+
+\begin{itemize}[leftmargin=1.5em,
+                itemsep=0pt,
+                topsep=2pt]
+\item Charakterizujte projektový zámer, navrhované spôsoby riešenia a relevantnosť očakávaných výsledkov
+\item Charakterizujte stav poznania, vedecké základy a predchádzajúce výsledky, ktoré sú  základom pre realizáciu projektu v danej oblasti výskumu a vývoja a nadväznosť navrhovaného riešenia projektu na vlastné publikované výsledky
+\item Definujte aktuálnosť a relevantnosť riešeného problému v danej oblasti vedy a techniky a vysvetlite v čom spočíva originalita myšlienky projektu a originalita jeho riešenia
+\item Definujte ciele projektu a reálnosť ich dosiahnutia
+\item Opíšte navrhovanú metodológiu riešenia projektu, opodstatnenosť jej výberu vo vzťahu k splneniu deklarovaných cieľov
+\item Uveďte maximálne 5 najvýznamnejších vedeckých výstupov zodpovedného riešiteľa za posledných 60 mesiacov aktívneho pôsobenia v pracovnej pozícii (tzn. prerušenia z dôvodu plnenia rodičovských povinností, zdravotných prekážok a iných sa nerátajú do uvedenej dĺžky)
+\item Uveďte maximálne 5 najvýznamnejších projektov vedeckej kariéry zodpovedného riešiteľa a ich výstupy
+\item Opíšte odbornosť zodpovedného riešiteľa v danej oblasti výskumu, jeho expertízu a víziu pre budovanie výskumného tímu, ďalší rozvoj výskumu a kariérny rast (aj v rámci prípadného medzinárodného rozsahu).
+\item Definujte expertízu riešiteľského kolektívu a aj zúčastnených riešiteľských organizácií na riešenie predkladaného projektu
+\item Opíšte komplementaritu, spoluprácu a prípadnú zastupiteľnosť členov tímu z hľadiska ich expertízy a odborného prínosu pre riešenie projektu
+\item Definujte mieru zapojenia mladých pracovníkov výskumu a vývoja do 35 rokov vrátane študentov doktorandského štúdia do riešenia projektu
+\end{itemize}
+
+\subsection*{1.1 Charakteristika projektového zámeru
+a očakávaných výsledkov}
+
+Projekt SOUND-EDGE sa zameriava na aplikovaný výskum metód prediktívnej údržby rotujúcich priemyselných zariadení s využitím strojového učenia na okraji siete (TinyML). Hlavnou myšlienkou je spracovávanie akustických a vibračných signálov priamo v blízkosti monitorovaného zariadenia bez potreby nepretržitého prenosu surových senzorových údajov do cloudového prostredia.
+
+Navrhované riešenie bude využívať modely detekcie anomálií optimalizované pre mikrokontroléry s obmedzenou pamäťou a výpočtovým výkonom. Namiesto prenosu kompletných meraní sa predpokladá odosielanie súhrnných údajov o stave zariadenia, napríklad skóre anomálie a časovej značky.
+
+Výsledkom projektu bude návrh softvérovej architektúry, optimalizované modely TinyML a experimentálna metodika ich vyhodnocovania. Riešenie bude simulačne overené na verejne dostupných datasetoch NASA IMS, MIMII a ToyADMOS. Očakávané výsledky vytvoria technologický základ pre následný vývoj integrovaného prototypu a budúce využitie v priemyselnej praxi.
+
+\subsection*{1.2 Stav poznania, vedecké základy
+a predchádzajúce výsledky}
+
+Prediktívna údržba využíva údaje o prevádzkovom stave zariadení na identifikáciu zmien, ktoré môžu signalizovať vznikajúcu poruchu. Pri rotujúcich strojoch patria medzi významné diagnostické zdroje vibrácie a akustické signály. Poškodenie ložísk môže spôsobovať opakované impulzy a zmeny frekvenčných charakteristík, ktoré možno analyzovať metódami spracovania signálov a strojového učenia.
+
+Lei a kol. [1] sa zaoberajú využitím strojového učenia pri diagnostike porúch priemyselných zariadení. Upozorňujú najmä na nedostatok údajov o skutočných poruchách a na problémy pri použití modelov na rôznych strojoch a v odlišných prevádzkových podmienkach. Randall a Antoni [2] opisujú, ako sa poškodenie valivých ložísk prejavuje vo vibračných signáloch a akými metódami možno tieto zmeny analyzovať na účely diagnostiky porúch.
+
+Pri akustickej diagnostike predstavujú dôležité východisko datasety MIMII a ToyADMOS a metodika DCASE 2020, ktorá umožňuje hodnotiť detekciu anomálií na základe modelov trénovaných prevažne na normálnych prevádzkových údajoch. Dataset NASA IMS zase poskytuje časové záznamy vibrácií ložísk počas postupného opotrebenia až do zlyhania.
+
+Významným technologickým smerom je okrajové spracovanie dát, ktoré umožňuje znížiť potrebu ich prenosu do centralizovaných systémov. Njor a kol. analyzujú možnosti využitia TinyML v prediktívnej údržbe a zdôrazňujú potrebu spoločnej optimalizácie modelu, spracovania dát a hardvérových obmedzení. Jacob a kol. opisujú celočíselnú kvantizáciu neurónových sietí a benchmark MLPerf Tiny poskytuje metodické východisko na hodnotenie výpočtovej náročnosti modelov na zariadeniach s obmedzenými zdrojmi.
+
+Projekt SOUND-EDGE nadväzuje na uvedené vedecké poznatky a prepája ich v jednotnej metodike návrhu a experimentálneho vyhodnotenia.
+
+\subsection*{1.3 Aktuálnosť riešeného problému
+a originalita projektu}
+
+Aktuálnosť projektu vyplýva z potreby zvyšovať spoľahlivosť priemyselných zariadení a obmedzovať náklady spojené s neplánovanými odstávkami. Prenos a centralizované spracovanie rozsiahlych senzorových záznamov môžu zvyšovať nároky na komunikačnú infraštruktúru a spôsobovať oneskorenia.
+
+Existujúce riešenia už využívajú strojové učenie, akustickú diagnostiku aj edge computing. Originalita projektu preto nespočíva v samotnom použití týchto technológií, ale v ich cielenej integrácii a systematickom experimentálnom porovnaní pri zohľadnení obmedzení nízkonákladových mikrokontrolérov.
+
+Osobitná pozornosť bude venovaná optimalizácii modelov pomocou kvantizácie, porovnaniu akustických a vibračných prístupov a vyhodnoteniu kompromisov medzi úspešnosťou detekcie, veľkosťou modelu, latenciou a objemom prenášaných údajov.
+
+Keďže dostupné datasety neobsahujú synchronizované akustické a vibračné merania totožných strojov, spoločné vyhodnocovanie oboch modalít bude predmetom metodického návrhu. Výsledky samostatných experimentov nebudú prezentované ako dôkaz úspešnosti multimodálnej fúzie na reálnom stroji.
+
+\subsection*{1.4 Ciele projektu a reálnosť
+ich dosiahnutia}
+
+Hlavným cieľom projektu je navrhnúť a simulačne overiť architektúru a modely strojového učenia schopné detegovať začínajúce poruchy ložísk a motorov zo zvuku a vibrácií bez nepretržitého prenosu surových dát do cloudu.
+
+Hlavný cieľ je rozdelený do štyroch čiastkových cieľov:
+
+C1 – Návrh architektúry: Navrhnúť softvérovú architektúru systému od spracovania senzorového signálu až po odosielanie súhrnných výsledkov.
+
+C2 – Modely detekcie anomálií: Navrhnúť a porovnať modely pre akustické a vibračné signály a preskúmať možnosti ich kombinácie.
+
+C3 – Optimalizácia modelov: Optimalizovať modely pre mikrokontroléry, predovšetkým pomocou kvantizácie, pri zachovaní prijateľnej úspešnosti detekcie.
+
+C4 – Experimentálne overenie: Vyhodnotiť navrhnuté riešenia na verejne dostupných datasetoch pomocou reprodukovateľnej experimentálnej metodiky.
+
+Plánovanými merateľnými ukazovateľmi sú zvýšenie AUC o 10 percentuálnych bodov oproti zvolenej referencii DCASE, pokles AUC po kvantizácii najviac o 2 percentuálne body, veľkosť modelu do 200 kB, spracovanie jednej sekundy signálu do 200 ms a zníženie objemu prenášaných údajov minimálne o 99,9 \% oproti prenosu surového signálu.
+
+Uvedené hodnoty predstavujú cieľové parametre, ktorých dosiahnutie bude predmetom experimentálneho overenia. Reálnosť projektu podporuje dostupnosť verejných datasetov, existujúcich softvérových nástrojov a publikovaných referenčných metód.
+
+\subsection*{1.5 Metodológia riešenia projektu}
+
+Riešenie projektu bude rozdelené do troch etáp.
+
+Prvá etapa (07/2027 – 06/2028): Analýza stavu poznania, príprava datasetov NASA IMS, MIMII a ToyADMOS, návrh softvérovej architektúry a stanovenie metodiky experimentálneho vyhodnocovania. Súčasťou bude implementácia referenčných metód detekcie anomálií.
+
+Druhá etapa (07/2028 – 06/2029): Návrh, implementácia a trénovanie modelov strojového učenia pre akustické a vibračné signály. Modely budú porovnávané s referenčnými metódami a optimalizované pomocou 8-bitovej kvantizácie s ohľadom na pamäťové a výpočtové obmedzenia mikrokontrolérov.
+
+Tretia etapa (07/2029 – 06/2030): Simulačné overenie modelov, vyhodnotenie úspešnosti detekcie, pamäťovej náročnosti, času spracovania a zníženia objemu prenášaných údajov. Výsledky budú porovnané s plánovanými merateľnými ukazovateľmi a spracované do odbornej dokumentácie.
+
+Pri experimentoch sa zabezpečí oddelenie trénovacích a testovacích údajov s ohľadom na časové a prevádzkové súvislosti, aby sa minimalizovalo riziko úniku informácií medzi dátovými množinami. Úspešnosť detekcie sa bude hodnotiť najmä metrikou AUC a doplnkovými ukazovateľmi relevantnými pre konkrétny dataset.
+
+Osobitne bude vyhodnotený vplyv kvantizácie na presnosť a pamäťovú náročnosť modelov. Výpočtová latencia bude posudzovaná v definovanom simulačnom alebo emulačnom prostredí; výsledky nebudú vydávané za merania na fyzickom mikrokontroléri, pokiaľ takéto merania nebudú uskutočnené.
+
+Metodológia zodpovedá plánovanej cieľovej úrovni technologickej pripravenosti TRL 3 – experimentálne potvrdenie konceptu.
+
+\subsection*{1.6 Významné vedecké výstupy
+zodpovedného riešiteľa}
+
+Waseeb, S., Lang, J. (2026). A Multi-Method Approach to Classifying Organizational Patterns: Identifying Core Dimensions of Software Development Organization. IEEE Access. DOI: 10.1109/ACCESS.2026.3713053.
+
+Udvardi, O., Lang, J. (2025). Engineering Learning Content Through Question and Answer Pairs. SN Computer Science, 6, článok 485. DOI: 10.1007/s42979-025-04011-3.
+
+Udvardi, O., Baier, M., Lang, J. (2026). Framework for Personalized Support in University Course Planning. In: Innovation via Collaborative Learning in Engineering Education, s. 59–66. Springer. DOI: 10.1007/978-3-032-18885-4\_6.
+
+Lang, J. (2023). Use Case Driven Educational Content Engineering. In: Learning in the Age of Digital and Green Transition. Lecture Notes in Networks and Systems, zv. 634, s. 139–150. Springer. DOI: 10.1007/978-3-031-26190-9\_14.
+
+\subsection*{1.7 Významné projektové a odborné
+výsledky zodpovedného riešiteľa}
+
+Zodpovedný riešiteľ doc. Ing. Ján Lang, PhD. sa odborne venuje softvérovému inžinierstvu, softvérovým architektúram a modelovaniu softvérových systémov.
+
+Medzi relevantné projekty patrí APVV-23-0408 „Vyvíjanie architektonických znalostí v edge–cloud kontinuu“ (2024–2028), ktorý skúma problematiku architektúr distribuovaných softvérových systémov. Ďalším projektom je KEGA 014STU-4/2024 „Podpora personalizovaného vzdelávania explikovaná modelom“ (2024–2026).
+
+Skúsenosti zodpovedného riešiteľa v oblasti návrhu a modelovania softvérových systémov predstavujú vhodný základ pre architektonickú časť projektu SOUND-EDGE. Priamy výskum TinyML a akustickej diagnostiky však vyžaduje doplnenie príslušných odborných kompetencií riešiteľského kolektívu.
+
+\subsection*{1.8 Odbornosť zodpovedného riešiteľa
+a rozvoj výskumného tímu}
+
+Odbornosť doc. Ing. Jána Langa, PhD. je zameraná na softvérové inžinierstvo, návrh a modelovanie softvérových systémov a metódy vývoja softvéru. Jeho skúsenosti poskytujú odborné predpoklady na vedenie návrhu architektúry systému SOUND-EDGE, koordináciu výskumných úloh a hodnotenie kvality navrhovaného softvérového riešenia.
+
+Projekt zároveň vytvorí priestor na rozvoj odborných kompetencií mladších členov riešiteľského tímu v oblasti analýzy dát, strojového učenia, spracovania signálov a optimalizácie modelov TinyML.
+
+\subsection*{1.9 Expertíza riešiteľského kolektívu
+a zapojených organizácií}
+
+Žiadateľom projektu je Slovenská technická univerzita v Bratislave, pričom riešiteľským pracoviskom je Fakulta informatiky a informačných technológií. Riešiteľský kolektív tvorí zodpovedný riešiteľ doc. Ing. Ján Lang, PhD. a traja mladí výskumní pracovníci Gabriela Tovarňáková, Pavel Ustimenko a Ján Vargovčík.
+
+Zodpovedný riešiteľ prispeje svojimi odbornými skúsenosťami v oblasti softvérového inžinierstva a návrhu softvérových systémov. Ostatní členovia tímu sa budú podieľať na návrhu architektúry, príprave a analýze datasetov, vývoji a optimalizácii modelov TinyML a experimentálnom vyhodnotení výsledkov. Zodpovedný riešiteľ bude zabezpečovať odbornú koordináciu projektu a dohľad nad plnením stanovených cieľov.
+
+\subsection*{1.10 Komplementarita a spolupráca
+členov tímu}
+
+Riešenie projektu vyžaduje kombináciu odborných znalostí zo softvérového inžinierstva, spracovania signálov, strojového učenia a vstavaných systémov. Jednotlivé činnosti na seba nadväzujú od prípravy dát a návrhu architektúry cez implementáciu modelov až po ich optimalizáciu a vyhodnotenie.
+
+Komplementarita riešiteľov bude zabezpečená rozdelením úloh podľa ich odborného zamerania a priebežnou kontrolou spoločných výsledkov. Vývoj modelov bude koordinovaný s návrhom architektúry a experimentálnou metodikou, aby bolo možné posúdiť nielen úspešnosť detekcie, ale aj praktickú realizovateľnosť navrhovaného riešenia.
+
+\subsection*{1.11 Zapojenie mladých
+výskumných pracovníkov}
+
+Do projektu SOUND-EDGE budú zapojení traja študenti vo veku do 35 rokov, ktorí sa budú aktívne podieľať na výskumných činnostiach. Ich úlohou bude analýza datasetov, vývoj modelov TinyML, realizácia simulačných experimentov a vyhodnocovanie výsledkov. Ich zapojenie prispeje k rozvoju odborných kompetencií a získavaniu praktických skúseností s aplikovaným výskumom.
+
+\subsection*{Použitá literatúra}
+
+[1] Lei, Y. et al. (2020). Applications of Machine Learning to Machine Fault Diagnosis: A Review and Roadmap. Mechanical Systems and Signal Processing, 138, 106587. DOI: 10.1016/j.ymssp.2019.106587.
+
+[2] Randall, R. B., Antoni, J. (2011). Rolling Element Bearing Diagnostics – A Tutorial. Mechanical Systems and Signal Processing, 25(2), 485–520. DOI: 10.1016/j.ymssp.2010.07.017.
+
+\section*{2. Dopad}
+
+\begin{itemize}[leftmargin=1.5em,
+                itemsep=0pt,
+                topsep=2pt]
+\item Uveďte / definujte merateľné ukazovatele a očakávané dopady projektu
+\item Definujte prínosy a využiteľnosť projektu pre rozvoj poznania a spoločnosti
+\item Definujte opatrenia na maximalizáciu výsledkov a dopadu ako aj plánovanú komunikáciu projektových výstupov
+\end{itemize}
+
+\subsection*{2.1 Merateľné ukazovatele
+a očakávané dopady projektu}
+
+Projekt SOUND-EDGE prispeje k rozvoju metód inteligentnej prediktívnej údržby priemyselných zariadení prostredníctvom experimentálneho overenia modelov strojového učenia optimalizovaných pre zariadenia s obmedzeným výpočtovým výkonom. Hlavným očakávaným prínosom je preukázanie možností lokálneho vyhodnocovania akustických a vibračných signálov bez potreby nepretržitého prenosu surových údajov do cloudového prostredia.
+
+Úspešnosť riešenia bude posudzovaná na základe nasledujúcich merateľných ukazovateľov:
+
+- Zvýšenie hodnoty AUC detekcie akustických anomálií o 10 percentuálnych bodov oproti zvolenej referenčnej metóde DCASE 2020.
+- Pokles hodnoty AUC po 8-bitovej kvantizácii modelov najviac o 2 percentuálne body.
+- Veľkosť optimalizovaného modelu maximálne 200 kB.
+- Čas spracovania jednej sekundy signálu maximálne 200 ms v definovanom simulačnom alebo emulačnom prostredí.
+- Zníženie objemu prenášaných údajov minimálne o 99,9 \% oproti nepretržitému prenosu surového signálu pri stanovených komunikačných parametroch.
+
+Uvedené hodnoty predstavujú plánované ciele, ktorých dosiahnutie bude predmetom experimentálneho overovania. Výsledky umožnia vyhodnotiť kompromisy medzi úspešnosťou detekcie, pamäťovou náročnosťou, rýchlosťou spracovania a objemom prenášaných údajov.
+
+Očakávaným výstupom je experimentálne potvrdenie technologického konceptu na úrovni TRL 3 a vytvorenie odborných podkladov pre ďalší vývoj systému.
+
+\subsection*{2.2 Prínosy a využiteľnosť projektu
+pre rozvoj poznania a spoločnosti}
+
+Vedecký prínos projektu spočíva v systematickom porovnaní metód detekcie anomálií v akustických a vibračných signáloch a v preskúmaní možností ich efektívneho využitia na výpočtovo obmedzených zariadeniach. Projekt prispeje k poznaniu v oblasti TinyML, spracovania signálov a optimalizácie modelov strojového učenia.
+
+Z aplikačného hľadiska vytvorí projekt technologický základ pre budúce systémy prediktívnej údržby, ktoré by mohli umožniť priebežné monitorovanie priemyselných zariadení s nižšími nárokmi na komunikačnú infraštruktúru. Takéto riešenia majú potenciál obmedziť neplánované odstávky, znížiť náklady na údržbu a prispieť k predĺženiu životnosti výrobných zariadení.
+
+Významným potenciálnym prínosom je dostupnosť technológie pre malé a stredné podniky, pre ktoré môžu byť komplexné komerčné monitorovacie systémy finančne náročné. Lokálne spracovanie údajov môže zároveň obmedziť prenos citlivých prevádzkových informácií mimo organizácie.
+
+Projekt prispeje aj k rozvoju odborných kompetencií riešiteľského kolektívu v oblasti umelej inteligencie, vstavaných systémov a aplikovaného výskumu.
+
+Keďže projekt zahŕňa predovšetkým simulačné overenie, uvedené ekonomické a spoločenské prínosy predstavujú očakávaný potenciál budúceho využitia technológie. Priame zníženie nákladov v konkrétnom priemyselnom podniku nebude počas projektu experimentálne preukazované.
+
+\subsection*{2.3 Opatrenia na maximalizáciu
+výsledkov a komunikácia projektových výstupov}
+
+Na maximalizáciu využiteľnosti výsledkov bude zabezpečená systematická dokumentácia navrhovanej softvérovej architektúry, použitých experimentálnych postupov a dosiahnutých výsledkov. Osobitná pozornosť bude venovaná reprodukovateľnosti experimentov a transparentnému uvádzaniu použitých datasetov, referenčných metód a hodnotiacich metrík.
+
+Výsledky projektu budú komunikované prostredníctvom odborných publikácií, konferenčných prezentácií a informačných materiálov určených vedeckej a odbornej verejnosti. Verejne dostupnými výstupmi budú najmä odborná dokumentácia, metodika experimentálneho overovania a súhrn experimentálnych výsledkov.
+
+Pri sprístupňovaní softvéru a experimentálnych podkladov budú rešpektované licenčné podmienky použitých datasetov a softvérových nástrojov. Možnosti zverejnenia zdrojového kódu budú posúdené s ohľadom na práva duševného vlastníctva.
+
+V záverečnej etape bude pripravené zhodnotenie technologického potenciálu riešenia a odporúčania pre budúci vývoj integrovaného prototypu a jeho overenie v laboratórnych a priemyselných podmienkach. Tým sa podporí nadväzujúci aplikovaný výskum a prípadná spolupráca s priemyselnými partnermi.
+
+\section*{3. Implementácia}
+
+\begin{itemize}[leftmargin=1.5em,
+                itemsep=0pt,
+                topsep=2pt]
+\item Projektový plán a výstupy - definujte realizáciu projektu z hľadiska časového harmonogramu s ohľadom na  stanovené vedecké ciele, popíšte jednotlivé kroky pracovného plánu s jednotlivými míľnikmi a výstupmi, rozdeľte ich do pracovných balíkov.
+\item Opíšte projektový manažment a procesy v rámci riadenia projektu
+\item Opíšte riziká implementácie projektu vo vzťahu k očakávaným výstupom a spôsob ich zmiernenia
+\item Vysvetlite adekvátnosť navrhnutého rozpočtu projektu v kontexte finančnej náročnosti dosiahnutia cieľov
+\item Opíšte existujúcu infraštruktúru pracovísk (pracoviska) a ich (jeho) záruku kvalitného riešenia projektu (opis spôsobu využitia existujúcej infraštruktúry pre kvalitné plnenie úloh plánovaných v projekte)
+\end{itemize}
+
+\subsection*{3.1 Projektový plán, pracovné balíky
+a míľniky}
+
+Projekt SOUND-EDGE bude realizovaný v období od 1. 7. 2027 do 30. 6. 2030. Riešenie bude rozdelené do troch nadväzujúcich etáp, ktoré zodpovedajú jednotlivým pracovným balíkom a zabezpečujú postupný prechod od návrhu architektúry k experimentálnemu overeniu technologického konceptu.
+
+Pracovný balík 1 – Analýza a návrh systému (07/2027 – 06/2028)
+
+Prvý pracovný balík bude zameraný na analýzu existujúcich prístupov prediktívnej údržby, spracovanie verejných datasetov NASA IMS, MIMII a ToyADMOS a návrh softvérovej architektúry SOUND-EDGE. Súčasťou bude návrh metodiky predspracovania signálov, príprava referenčných metód detekcie anomálií a stanovenie experimentálnych postupov.
+
+Míľnik 1: Dokončený návrh architektúry systému a metodiky experimentálneho overovania.
+
+Výstupy: Technická dokumentácia architektúry, pripravené datasety a referenčné metódy.
+
+Pracovný balík 2 – Vývoj a optimalizácia modelov TinyML (07/2028 – 06/2029)
+
+Druhý pracovný balík bude zahŕňať návrh, implementáciu a trénovanie modelov strojového učenia na detekciu anomálií v akustických a vibračných signáloch. Modely budú porovnané s referenčnými prístupmi a optimalizované pomocou kvantizácie s ohľadom na pamäťové a výpočtové obmedzenia mikrokontrolérov. Preskúmajú sa tiež možnosti kombinácie oboch typov signálov.
+
+Míľnik 2: Implementované a optimalizované modely TinyML pripravené na záverečné experimentálne vyhodnotenie.
+
+Výstupy: Natrénované modely, optimalizované konfigurácie a priebežné výsledky porovnania.
+
+Pracovný balík 3 – Simulačné overenie a vyhodnotenie (07/2029 – 06/2030)
+
+Tretí pracovný balík bude zameraný na systematické experimentálne overenie modelov na verejne dostupných datasetoch. Vyhodnotí sa úspešnosť detekcie anomálií, vplyv kvantizácie, pamäťová náročnosť modelov, čas spracovania a objem prenášaných údajov. Dosiahnuté výsledky budú porovnané so stanovenými cieľovými ukazovateľmi.
+
+Míľnik 3: Dokončené experimentálne overenie technologického konceptu na úrovni TRL 3.
+
+Výstupy: Súhrnná experimentálna správa, metodika vyhodnocovania a odborná dokumentácia výsledkov.
+
+\subsection*{3.2 Projektový manažment
+a procesy riadenia}
+
+Projekt bude koordinovaný zodpovedným riešiteľom doc. Ing. Jánom Langom, PhD., ktorý bude v rámci simulácie zabezpečovať odborné vedenie, koordináciu pracovných balíkov a kontrolu plnenia stanovených cieľov.
+
+Riešiteľský kolektív budú tvoriť členovia zapojení do návrhu architektúry, prípravy datasetov, implementácie a optimalizácie modelov a experimentálneho vyhodnocovania.
+
+Riadenie projektu bude založené na priebežných pracovných stretnutiach, kontrole dosiahnutých výsledkov a vyhodnocovaní plnenia jednotlivých míľnikov. Pre jednotlivé pracovné balíky budú definované konkrétne úlohy, očakávané výstupy a zodpovednosti členov tímu.
+
+Priebežná kontrola bude zahŕňať hodnotenie experimentálnych výsledkov, dodržiavanie harmonogramu a sledovanie čerpania finančných prostriedkov. V prípade odchýlok od plánovaných výsledkov budú prijímané nápravné opatrenia, najmä úpravy experimentálnych postupov alebo optimalizačných metód.
+
+\subsection*{3.3 Riziká implementácie
+a opatrenia na ich zmiernenie}
+
+Pri realizácii projektu boli identifikované nasledujúce hlavné riziká:
+
+1 – Nedostatočná úspešnosť detekcie anomálií. Modely nemusia dosiahnuť požadované hodnoty AUC. Riziko bude zmierňované porovnávaním viacerých architektúr modelov, optimalizáciou predspracovania signálov a použitím referenčných metód.
+
+2 – Obmedzenia pamäťovej a výpočtovej kapacity. Navrhované modely môžu prekročiť požadované limity. Na zmiernenie rizika sa využije kvantizácia, zjednodušovanie architektúr a optimalizácia spracovania vstupných údajov.
+
+3 – Obmedzená reprezentatívnosť verejných datasetov. Verejne dostupné datasety nemusia dostatočne reprezentovať všetky podmienky priemyselnej prevádzky. Výsledky preto budú interpretované v kontexte použitých dát a experimentálneho prostredia.
+
+4 – Nedostupnosť synchronizovaných multimodálnych údajov. Datasety NASA IMS, MIMII a ToyADMOS neposkytujú spoločné synchronizované zvukové a vibračné merania rovnakých zariadení. Preto sa bude primárne vykonávať samostatné experimentálne hodnotenie oboch modalít. Multimodálna fúzia bude posudzovaná ako metodický návrh, ktorého úplné overenie môže vyžadovať ďalšie merania.
+
+5 – Oneskorenie implementácie a experimentov. Vývoj modelov alebo optimalizačné experimenty môžu vyžadovať viac času, než sa pôvodne predpokladalo. Riziko bude zmierňované priebežnou kontrolou míľnikov, využívaním existujúcich nástrojov a prioritizáciou kľúčových experimentov.
+
+6 – Rozdiel medzi simuláciou a reálnym hardvérom. Výsledky simulácie nemusia presne zodpovedať správaniu modelov na konkrétnom mikrokontroléri. Preto budú jasne zdokumentované predpoklady simulačného prostredia a výsledky nebudú prezentované ako merania na fyzickom zariadení.
+
+\subsection*{3.4 Adekvátnosť navrhnutého rozpočtu}
+
+Celkový plánovaný rozpočet projektu SOUND-EDGE predstavuje 288 000 € na obdobie troch rokov. Finančné prostriedky budú využité predovšetkým na personálne zabezpečenie výskumných činností, vývoj a optimalizáciu modelov, experimentálne vyhodnocovanie, technické vybavenie a prezentáciu dosiahnutých výsledkov.
+
+Najväčšiu časť rozpočtu predstavujú mzdové náklady a súvisiace zákonné odvody, keďže projekt má prevažne softvérový a experimentálny charakter. Materiálové náklady budú súvisieť najmä s vývojovým a výpočtovým vybavením. Náklady na služby podporia realizáciu experimentov a odborných činností, cestovné náklady odbornú spoluprácu a prezentáciu výsledkov.
+
+Čerpanie finančných prostriedkov bude prispôsobené harmonogramu. V úvodnej etape budú financované najmä analytické a návrhové činnosti. V druhej etape bude vyšší podiel výdavkov súvisieť s implementáciou a optimalizáciou modelov. V záverečnej etape budú financované experimentálne overovanie, vyhodnotenie výsledkov a odborná dokumentácia.
+
+Náklady na popularizáciu sú plánované vo výške 1 800 € za celé obdobie riešenia. Rozpočet predpokladá financovanie z prostriedkov APVV bez ďalšieho spolufinancovania.
+
+Navrhovaná finančná štruktúra zohľadňuje softvérový charakter riešenia a nepredpokladá rozsiahle investície do priemyselného hardvéru. Konkrétne personálne náklady budú odôvodnené plánovanými pracovnými kapacitami, pričom finančné prostriedky budú priradené k jednotlivým výskumným úlohám a výstupom.
+
+\subsection*{3.5 Existujúca infraštruktúra
+pracoviska}
+
+Projekt bude realizovaný na Fakulte informatiky a informačných technológií Slovenskej technickej univerzity v Bratislave.
+
+Na riešenie projektu sa predpokladá využitie výpočtových pracovných staníc, dátových úložísk a softvérových vývojových nástrojov určených na spracovanie signálov, trénovanie modelov strojového učenia a simulačné experimenty.
+
+Softvérová infraštruktúra bude zahŕňať nástroje programovacieho jazyka Python, knižnice na spracovanie signálov a frameworky na implementáciu a optimalizáciu modelov neurónových sietí vrátane nástrojov pre TinyML.
+
+Pri experimentálnom vyhodnocovaní sa budú využívať verejne dostupné datasety NASA IMS, MIMII a ToyADMOS. Ich použitie umožní realizáciu reprodukovateľných experimentov bez potreby rozsiahleho fyzického merania na priemyselných strojoch.
+
+Existujúca a plánovaná výpočtová infraštruktúra poskytne podmienky na riešenie hlavných cieľov projektu. Konkrétne dostupné hardvérové vybavenie a rozsah jeho využitia budú spresnené podľa možností pracoviska.
+
+Zvolená infraštruktúra zodpovedá charakteru projektu, ktorého cieľom je dosiahnuť úroveň TRL 3 prostredníctvom softvérového a simulačného experimentálneho overenia.
+
+\end{document}
